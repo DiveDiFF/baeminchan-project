@@ -89,6 +89,11 @@
   letter-spacing: 0;
 }
 
+.sub-menu>li:hover>a {
+  color: #21c1bc;
+  font-weight: bold;
+}
+
 #menu8 ul.sub-menu {
   position: absolute;
   left: -24px;
