@@ -19,7 +19,7 @@ import { HeaderHeaderComponent } from './header-header/header-header.component';
     FooterComponent,
     ContainerComponent,
     HeaderTopMenuComponent,
-    HeaderHeaderComponent
+    HeaderHeaderComponent,
   ],
   imports: [
     BrowserModule

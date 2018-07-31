@@ -27,6 +27,10 @@
   overflow: hidden;
 }
 
+.download-app:hover a {
+  color: #21c1bc;
+}
+
 .download-app .ic {
   display: inline-block;
   zoom: 1;
@@ -72,6 +76,17 @@
   background: url("http://cdn.bmf.kr/web/common/util_bar.gif") no-repeat 0 12px;
 }
 
+.member-menu-item:hover a {
+  color: #21c1bc;
+}
+
 .member-menu-item:first-child>a {
   background: none;
+}
+
+.util-cart a {
+  padding-right: 0;
+  color: #333;
+  font-weight: bold;
+  /* font-family: 'NanumBold', sans-serif; */
 }

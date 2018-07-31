@@ -10,15 +10,19 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   vertical-align: baseline;
   background: transparent;
 }
-/* * {
+* {
   box-sizing: content-box;
-} */
+}
 
 body {
   font-family: 'Nanum', 'Apple Gothic', 'Malgun Gothic', 'Nanum Gothic', 'Dotum', Arial, sans-serif;
   font-size: 13px;
   background: #fff;
   color: #333;
+}
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block;
 }
 
 ol, ul, dl {

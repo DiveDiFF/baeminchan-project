@@ -1,93 +1,72 @@
 <!-- 메인 메뉴-->
-<nav class="main-menu-wrapper">
-  <h2>메인 메뉴</h2>
-  <ul class="main-menu-list">
-    <li class="main-menu-item">
-      <span>밑반찬</span>
-      <ul class="sub-menu-list">
-        <li class="sub-menu-item">무침</li>
-        <li class="sub-menu-item">나물무침</li>
-        <li class="sub-menu-item">볶음</li>
-        <li class="sub-menu-item">조림</li>
-        <li class="sub-menu-item">김치</li>
-        <li class="sub-menu-item">전</li>
-        <li class="sub-menu-item">장아찌·피클</li>
-        <li class="sub-menu-item">젓갈·장·소스</li>
-        <li class="sub-menu-item">세트</li>
-      </ul>
-    </li>
-    <li class="main-menu-item">
-      <span>국·찌개</span>
-        <ul class="sub-menu-list">
-            <li class="sub-menu-item">국</li>
-            <li class="sub-menu-item">찌개</li>
-            <li class="sub-menu-item">탕</li>
-            <li class="sub-menu-item">전골</li>
-            <li class="sub-menu-item">세트</li>
+<div class="nav-wrapper">
+  <nav class="main-menu-wrapper">
+    <h2 class="hidden">메인 메뉴</h2>
+    <ul class="main-menu-list">
+      <li id="menu1" class="menu-item">
+        <a href="#"><span id="sub-menu1" class="menu-item-title" (mouseover)="mouseOver($event.target)">밑반찬</span></a>
+        <ul class="sub-menu" [class.active]="'sub-menu1' === focusedMenu" (mouseleave)="mouseLeave()">
+          <li *ngFor="let sub of subMenu1" [id]="sub">
+            <a href="#"><span>{{sub}}</span></a>
+          </li>
         </ul>
-    </li>
-    <li class="main-menu-item">
-      <span>메인반찬</span>
-        <ul class="sub-menu-list">
-            <li class="sub-menu-item">고기반찬</li>
-            <li class="sub-menu-item">해산물반찬</li>
-            <li class="sub-menu-item">생선반찬</li>
-            <li class="sub-menu-item">덮밥</li>
-            <li class="sub-menu-item">튀김</li>
-            <li class="sub-menu-item">면</li>
-            <li class="sub-menu-item">양식</li>
-            <li class="sub-menu-item">아시아식</li>
-            <li class="sub-menu-item">분식</li>
-            <li class="sub-menu-item">죽</li>
-            <li class="sub-menu-item">세트</li>
+      </li>
+      <li id="menu2" class="menu-item">
+        <a href="#"><span id="sub-menu2" class="menu-item-title" (mouseover)="mouseOver($event.target)">국ㆍ찌개</span></a>
+        <ul class="sub-menu" [class.active]="'sub-menu2' === focusedMenu" (mouseleave)="mouseLeave()">
+          <li *ngFor="let sub of subMenu2" [id]="sub">
+            <a href="#"><span>{{sub}}</span></a>
+          </li>
         </ul>
-    </li>
-    <li class="main-menu-item">
-      <span>아이반찬</span>
-        <ul class="sub-menu-list">
-            <li class="sub-menu-item">이유식 초기/중기</li>
-            <li class="sub-menu-item">이유식 후기/완료기</li>
-            <li class="sub-menu-item">아이반찬</li>
-            <li class="sub-menu-item">어린이반찬</li>
-            <li class="sub-menu-item">간식·음료</li>
+      </li>
+      <li id="menu3" class="menu-item">
+        <a href="#"><span id="sub-menu3" class="menu-item-title" (mouseover)="mouseOver($event.target)">메인반찬</span></a>
+        <ul class="sub-menu" [class.active]="'sub-menu3' === focusedMenu" (mouseleave)="mouseLeave()">
+          <li *ngFor="let sub of subMenu3" [id]="sub">
+            <a href="#"><span>{{sub}}</span></a>
+          </li>
         </ul>
-    </li>
-    <li class="main-menu-item">
-      <span>정기식단</span>
-        <ul class="sub-menu-list">
-            <li class="sub-menu-item">1~2인</li>
-            <li class="sub-menu-item">3~4인</li>
-            <li class="sub-menu-item">아이반찬</li>
+      </li>
+      <li id="menu4" class="menu-item">
+        <a href="#"><span id="sub-menu4" class="menu-item-title" (mouseover)="mouseOver($event.target)">아이반찬</span></a>
+        <ul class="sub-menu" [class.active]="'sub-menu4' === focusedMenu" (mouseleave)="mouseLeave()">
+          <li *ngFor="let sub of subMenu4" [id]="sub">
+            <a href="#"><span>{{sub}}</span></a>
+          </li>
         </ul>
-    </li>
-    <li class="main-menu-item">
-      <span>간편식</span>
-        <ul class="sub-menu-list">
-            <li class="sub-menu-item">간편반찬</li>
-            <li class="sub-menu-item">간편국찌개</li>
-            <li class="sub-menu-item">간편식품</li>
+      </li>
+      <li id="menu5" class="menu-item">
+        <a href="#"><span id="sub-menu5" class="menu-item-title" (mouseover)="mouseOver($event.target)">정기식단</span></a>
+        <ul class="sub-menu" [class.active]="'sub-menu5' === focusedMenu" (mouseleave)="mouseLeave()">
+          <li *ngFor="let sub of subMenu5" [id]="sub">
+            <a href="#"><span>{{sub}}</span></a>
+          </li>
         </ul>
-    </li>
-    <li class="main-menu-item">
-      <span>간식</span>
-        <ul class="sub-menu-list">
-            <li class="sub-menu-item">베이커리</li>
-            <li class="sub-menu-item">과일</li>
-            <li class="sub-menu-item">주스</li>
-            <li class="sub-menu-item">스무디</li>
-            <li class="sub-menu-item">유제품·커피</li>
-            <li class="sub-menu-item">기타간식</li>
+      </li>
+      <li id="menu6" class="menu-item">
+        <a href="#"><span id="sub-menu6" class="menu-item-title" (mouseover)="mouseOver($event.target)">간편식</span></a>
+        <ul class="sub-menu" [class.active]="'sub-menu6' === focusedMenu" (mouseleave)="mouseLeave()">
+          <li *ngFor="let sub of subMenu6" [id]="sub">
+            <a href="#"><span>{{sub}}</span></a>
+          </li>
         </ul>
-    </li>
-    <li class="main-menu-item">
-      <span>브랜드관</span>
-        <ul class="sub-menu-list">
-            <li class="sub-menu-item">반찬가게</li>
-            <li class="sub-menu-item">반찬장인</li>
-            <li class="sub-menu-item">셰프의요리</li>
-            <li class="sub-menu-item">전국맛집</li>
-            <li class="sub-menu-item">키즈관</li>
+      </li>
+      <li id="menu7" class="menu-item">
+        <a href="#"><span id="sub-menu7" class="menu-item-title" (mouseover)="mouseOver($event.target)">간식</span></a>
+        <ul class="sub-menu" [class.active]="'sub-menu7' === focusedMenu" (mouseleave)="mouseLeave()">
+          <li *ngFor="let sub of subMenu7" [id]="sub">
+            <a href="#"><span>{{sub}}</span></a>
+          </li>
         </ul>
-    </li>
-  </ul>
-</nav>
+      </li>
+      <li id="menu8" class="menu-item">
+        <a href="#"><span id="sub-menu8" class="menu-item-title" (mouseover)="mouseOver($event.target)">브랜드관</span></a>
+        <ul class="sub-menu" [class.active]="'sub-menu8' === focusedMenu" (mouseleave)="mouseLeave()">
+          <li *ngFor="let sub of subMenu8" [id]="sub">
+            <a href="#"><span>{{sub}}</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>

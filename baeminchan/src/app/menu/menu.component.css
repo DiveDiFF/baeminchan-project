@@ -1,0 +1,100 @@
+.nav-wrapper {
+  position: relative;
+  z-index: 100;
+  background: #483f35;
+}
+
+.main-menu-wrapper {
+  width: 980px;
+  height: 52px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.menu-item {
+  float: left;
+  position: relative;
+  text-align: left;
+  width: 124px;
+}
+
+#menu1 {
+  width: 100px;
+}
+
+#menu7 {
+  width: 120px;
+}
+
+#menu8 {
+  width: 140px;
+  background: #362d25;
+  text-align: center;
+}
+
+
+.menu-item>a {
+  display: block;
+  padding: 5px 0 0 1px;
+}
+
+.menu-item>a span {
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  /* font-family: "NanumBold", "맑은고딕", "Malgun Gothic", sans-serif; */
+  font-weight: bold;
+  height: 36px;
+  padding: 11px 25px 0;
+  text-align: center;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.menu-item:hover>a span {
+  background: #fff;
+  color: #21c1bc;
+}
+
+.sub-menu {
+    display: none;
+    width: 162px;
+    position: absolute;
+    left: 0;
+    top: 52px;
+    padding: 20px 0 31px;
+    font-family: "Nanum", sans-serif;
+    background: #fff;
+    border: 1px solid rgba(72,63,53,0.6);
+    border-top: none;
+    z-index: 1000;
+    -moz-background-clip: border;
+    -webkit-background-clip: border;
+    background-clip: border-box;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.sub-menu>li {
+  text-align: left;
+}
+
+.sub-menu>li a {
+  display: block;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.4em;
+  padding: 6px 0 3px 25px;
+  letter-spacing: 0;
+}
+
+#menu8 ul.sub-menu {
+  position: absolute;
+  left: -24px;
+}
+
+
+.active {
+  display: block;
+}
