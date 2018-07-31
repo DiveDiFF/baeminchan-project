@@ -1,0 +1,22 @@
+<div class="main-slides-wrapper">
+  <h2 class="hidden">슬라이드 배너</h2>
+  <ul class="main-slides-list" *ngIf="images"
+      [ngStyle]="{ 'background-image': 'url('+ images[ currentState === 1 ? 5 : currentState - 2 ].url  + ')' }">
+    <li class="main-slides-item" *ngFor="let image of images"
+         [class.active]="currentState === image.id"
+         [ngStyle]="{ 'background-image': 'url('+ image.url + ')' }" >
+      <a href="#"></a>
+    </li>
+  </ul>
+  <div class="slides-navi">
+      <a href="#" class="slides-prev" title="이전"
+      (click)="prevSlide()"></a>
+      <a href="#" class="slides-next" title="다음"
+      (click)="nextSlide()"></a>
+  </div>
+  <ul class="slides-pagination">
+      <li *ngFor="let pagination of paginations"><a href="#"
+        [class.now]="currentState === pagination"
+        (click)="changeNow(pagination)">{{ pagination }}</a></li>
+        </ul>
+</div>

@@ -29,6 +29,11 @@ ol, ul, dl {
   list-style: none;
 }
 
+i, em, address {
+  font-style: normal;
+  font-weight: normal;
+}
+
 a {
   text-decoration: none;
   color: #333;
