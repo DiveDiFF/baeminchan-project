@@ -1,19 +1,20 @@
 
 
-@keyframes slideimage{
+/* @keyframes slideimage{
   0%{
     opacity: 0;
   }
   100%{
     opacity: 1;
   }
-}
+} */
 
 .main-slides-wrapper {
   text-align: center;
   position: relative;
   max-width: 1920px;
   margin: 0 auto;
+  border: 0;
 }
 
 .main-slides-list {
@@ -24,22 +25,26 @@
   background-position: center center;
   background-repeat: no-repeat;
   z-index: -1;
+  border: 0;
 }
 
 .main-slides-item {
   height: 420px;
   position: absolute;
   width: 100%;
-  display: none;
+  display: list-item;
   background-position: center center;
   background-repeat: no-repeat;
-  animation: slideimage 800ms ease-in-out alternate;
+  /* animation: slideimage 800ms ease-in-out alternate; */
+  transition: all 0.8s;
   /* z-index: 0; */
+  opacity: 0;
+  border: 0;
 }
 
 .active {
   /* z-index: 50; */
-  display: list-item;
+  opacity: 1;
 }
 
 .slides-navi {

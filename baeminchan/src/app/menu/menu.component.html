@@ -3,65 +3,65 @@
   <nav class="main-menu-wrapper">
     <h2 class="hidden">메인 메뉴</h2>
     <ul class="main-menu-list">
-      <li id="menu1" class="menu-item">
-        <a href="#"><span id="sub-menu1" class="menu-item-title" (mouseover)="mouseOver($event.target)">밑반찬</span></a>
-        <ul class="sub-menu" [class.active]="'sub-menu1' === focusedMenu" (mouseleave)="mouseLeave()">
+      <li id="menu1" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a href="#"><span class="menu-item-title">밑반찬</span></a>
+        <ul class="sub-menu" [class.active]="'menu1' === focusedMenu">
           <li *ngFor="let sub of subMenu1" [id]="sub">
             <a href="#"><span>{{sub}}</span></a>
           </li>
         </ul>
       </li>
-      <li id="menu2" class="menu-item">
-        <a href="#"><span id="sub-menu2" class="menu-item-title" (mouseover)="mouseOver($event.target)">국ㆍ찌개</span></a>
-        <ul class="sub-menu" [class.active]="'sub-menu2' === focusedMenu" (mouseleave)="mouseLeave()">
+      <li id="menu2" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a href="#"><span class="menu-item-title" >국ㆍ찌개</span></a>
+        <ul class="sub-menu" [class.active]="'menu2' === focusedMenu">
           <li *ngFor="let sub of subMenu2" [id]="sub">
             <a href="#"><span>{{sub}}</span></a>
           </li>
         </ul>
       </li>
-      <li id="menu3" class="menu-item">
-        <a href="#"><span id="sub-menu3" class="menu-item-title" (mouseover)="mouseOver($event.target)">메인반찬</span></a>
-        <ul class="sub-menu" [class.active]="'sub-menu3' === focusedMenu" (mouseleave)="mouseLeave()">
+      <li id="menu3" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a href="#"><span class="menu-item-title">메인반찬</span></a>
+        <ul class="sub-menu" [class.active]="'menu3' === focusedMenu">
           <li *ngFor="let sub of subMenu3" [id]="sub">
             <a href="#"><span>{{sub}}</span></a>
           </li>
         </ul>
       </li>
-      <li id="menu4" class="menu-item">
-        <a href="#"><span id="sub-menu4" class="menu-item-title" (mouseover)="mouseOver($event.target)">아이반찬</span></a>
-        <ul class="sub-menu" [class.active]="'sub-menu4' === focusedMenu" (mouseleave)="mouseLeave()">
+      <li id="menu4" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a href="#"><span class="menu-item-title" >아이반찬</span></a>
+        <ul class="sub-menu" [class.active]="'menu4' === focusedMenu">
           <li *ngFor="let sub of subMenu4" [id]="sub">
             <a href="#"><span>{{sub}}</span></a>
           </li>
         </ul>
       </li>
-      <li id="menu5" class="menu-item">
-        <a href="#"><span id="sub-menu5" class="menu-item-title" (mouseover)="mouseOver($event.target)">정기식단</span></a>
-        <ul class="sub-menu" [class.active]="'sub-menu5' === focusedMenu" (mouseleave)="mouseLeave()">
+      <li id="menu5" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a href="#"><span class="menu-item-title" >정기식단</span></a>
+        <ul class="sub-menu" [class.active]="'menu5' === focusedMenu">
           <li *ngFor="let sub of subMenu5" [id]="sub">
             <a href="#"><span>{{sub}}</span></a>
           </li>
         </ul>
       </li>
-      <li id="menu6" class="menu-item">
-        <a href="#"><span id="sub-menu6" class="menu-item-title" (mouseover)="mouseOver($event.target)">간편식</span></a>
-        <ul class="sub-menu" [class.active]="'sub-menu6' === focusedMenu" (mouseleave)="mouseLeave()">
+      <li id="menu6" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a href="#"><span id="sub-menu6" class="menu-item-title">간편식</span></a>
+        <ul class="sub-menu" [class.active]="'menu6' === focusedMenu">
           <li *ngFor="let sub of subMenu6" [id]="sub">
             <a href="#"><span>{{sub}}</span></a>
           </li>
         </ul>
       </li>
-      <li id="menu7" class="menu-item">
-        <a href="#"><span id="sub-menu7" class="menu-item-title" (mouseover)="mouseOver($event.target)">간식</span></a>
-        <ul class="sub-menu" [class.active]="'sub-menu7' === focusedMenu" (mouseleave)="mouseLeave()">
+      <li id="menu7" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a href="#"><span class="menu-item-title">간식</span></a>
+        <ul class="sub-menu" [class.active]="'menu7' === focusedMenu">
           <li *ngFor="let sub of subMenu7" [id]="sub">
             <a href="#"><span>{{sub}}</span></a>
           </li>
         </ul>
       </li>
-      <li id="menu8" class="menu-item">
-        <a href="#"><span id="sub-menu8" class="menu-item-title" (mouseover)="mouseOver($event.target)">브랜드관</span></a>
-        <ul class="sub-menu" [class.active]="'sub-menu8' === focusedMenu" (mouseleave)="mouseLeave()">
+      <li id="menu8" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a href="#"><span id="sub-menu8" class="menu-item-title">브랜드관</span></a>
+        <ul class="sub-menu" [class.active]="'menu8' === focusedMenu">
           <li *ngFor="let sub of subMenu8" [id]="sub">
             <a href="#"><span>{{sub}}</span></a>
           </li>

@@ -1,0 +1,9 @@
+.item-wrapper {
+  font-family: "Noto Sans KR", sans-serif;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+  width: 980px;
+    margin: 0 auto;
+    overflow: hidden;
+}

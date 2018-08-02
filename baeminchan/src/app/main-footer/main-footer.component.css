@@ -1,0 +1,197 @@
+.wrap.bottom_wrap {
+  border-top: 1px solid #e1e1e1;
+  position: relative;
+}
+
+.content {
+  position: relative;
+  width: 980px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.wrap.bottom_wrap .content.bottom {
+  padding: 48px 0 48px 0;
+}
+
+.wrap.bottom_wrap .content.bottom .quick_menu_box {
+  width: 300px;
+  height: 140px;
+  float: left;
+  margin-top: 4px;
+}
+
+.wrap.bottom_wrap .content.bottom h2 {
+  padding-right: 2px;
+  font-size: 16px;
+  color: #333;
+  font-family: "NanumBold", sans-serif;
+  font-weight: bold;
+}
+
+.wrap.bottom_wrap .content.bottom .quick_menu_box ul.quick_menu_lst li {
+  float: left;
+  width: 149px;
+  text-align: center;
+  margin-bottom: 1px;
+}
+
+.wrap.bottom_wrap .content.bottom .quick_menu_box ul.quick_menu_lst li.q1.b1 {
+  height: 67px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin: -2px 0 0 -2px;
+  padding-bottom: 3px;
+}
+
+.wrap.bottom_wrap .content.bottom .quick_menu_box ul.quick_menu_lst li a {
+  overflow: hidden;
+  display: block;
+  font-size: 12px;
+  color: #333;
+  letter-spacing: -0.01em;
+}
+
+.wrap.bottom_wrap .content.bottom .quick_menu_box ul.quick_menu_lst li a span.ic {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto -8px;
+  text-align: center;
+  background: url("https://cdn.bmf.kr/web/common/icon-quick-menu.png") no-repeat;
+}
+
+.wrap.bottom_wrap .content.bottom .quick_menu_box ul.quick_menu_lst li.q1 a span.ic {
+  background-position: 1px -7px;
+}
+
+.wrap.bottom_wrap .content.bottom .quick_menu_box ul.quick_menu_lst li.q2.b2 {
+  height: 67px;
+  border-bottom: 1px solid #ccc;
+  margin: -2px 0 0 -2px;
+  padding-bottom: 3px;
+}
+
+.wrap.bottom_wrap .content.bottom .quick_menu_box ul.quick_menu_lst li.q2 a span.ic {
+  background-position: 0px -56px;
+}
+
+.wrap.bottom_wrap .content.bottom .quick_menu_box ul.quick_menu_lst li.q3.b3 {
+  height: 60px;
+  border-right: 1px solid #ccc;
+  margin: -3px 0 0 -2px;
+  padding-top: 12px;
+}
+
+.wrap.bottom_wrap .content.bottom .quick_menu_box ul.quick_menu_lst li.q3 a span.ic {
+  height: 52px;
+  background-position: 0px -103px;
+}
+
+.wrap.bottom_wrap .content.bottom .quick_menu_box ul.quick_menu_lst li.q4.b4 {
+  height: 60px;
+  margin: -3px 0 0 -3px;
+  padding-top: 12px;
+}
+
+.wrap.bottom_wrap .content.bottom .quick_menu_box ul.quick_menu_lst li.q4 a span.ic {
+  height: 52px;
+  background-position: 1px -153px;
+}
+
+.wrap.bottom_wrap .content.bottom .notice_box {
+  position: relative;
+  width: 404px;
+  height: 140px;
+  float: left;
+  margin-left: 53px;
+}
+
+.wrap.bottom_wrap .content.bottom .notice_box h2 {
+  margin-left: 15px;
+}
+
+.wrap.bottom_wrap .content.bottom .notice_box ul.notice_lst {
+  margin-top: 11px;
+}
+
+.wrap.bottom_wrap .content.bottom .notice_box ul.notice_lst li {
+  line-height: 30px;
+}
+
+.wrap.bottom_wrap .content.bottom .notice_box ul.notice_lst li a {
+  display: block;
+  padding-left: 20px;
+  font-size: 13px;
+  color: #333;
+  background: url("https://cdn.bmf.kr/web/common/bul_square.png") no-repeat left 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wrap.bottom_wrap .content.bottom .notice_box a.btn-more {
+  display: inline-block;
+  zoom: 1;
+  position: absolute;
+  right: 0;
+  top: -3px;
+}
+
+.wrap.bottom_wrap .content.bottom .cs_center_box {
+  width: 220px;
+  height: 140px;
+  float: right;
+  text-align: right;
+}
+
+.wrap.bottom_wrap .content.bottom .cs_center_box p.cs_tel_num {
+  font-size: 35px;
+  letter-spacing: -0.015em;
+  color: #333;
+  line-height: 1.0em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  margin: 4px 0 9px 0;
+}
+
+.wrap.bottom_wrap .content.bottom .cs_center_box dl {
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrap.bottom_wrap .content.bottom .cs_center_box dl dd {
+  float: right;
+  width: 155px;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  color: #333;
+  line-height: 1.4em;
+  margin-bottom: 1px;
+}
+
+.wrap.bottom_wrap .content.bottom .cs_center_box dl dd.first {
+  margin-bottom: 2px;
+}
+
+.wrap.bottom_wrap .content.bottom .cs_center_box dl dd strong {
+  padding-right: 5px;
+  color: #333;
+  font-family: 'NanumBold', sans-serif;
+  font-weight: bold;
+}
+
+.wrap.bottom_wrap .content.bottom .cs_center_box dl dd span {
+  display: inline-block;
+  zoom: 1;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.23em;
+  letter-spacing: 0;
+  margin-top: 3px;
+  font-weight: normal;
+}
+
+.wrap.bottom_wrap .content.bottom .cs_center_box dl dd span.last {
+  margin-top: 5px;
+}

@@ -1,88 +1,27 @@
 <main class="item-wrapper">
-  <h2>메뉴 리스트</h2>
+  <h2 class="hidden">메뉴 리스트</h2>
         <!-- 반찬리스트 1. 밑반찬-->
   <div class="sidedish-wrapper">
-    <h3>밑반찬</h3>
-    <p>언제 먹어도 든든한 반찬</p>
-    <ul class="sidedish-list">
+    <div class="mtlt">
+      <h3>밑반찬</h3>
+      <p>언제 먹어도 든든한 반찬</p>
+    </div>
+    <ul id="sidedish" class="sidedish-list">
       <!-- 밑반찬 아이템 1-->
-      <li class="sidedish-item">
-        <a href="#">
-          <img src="#" alt="" srcset="">
+      <li class="sidedish-item" *ngFor="let item of items">
+        <a [href]="item.url">
+          <img [src]="item.img" alt="" srcset="">
           <dl>
-            <dt class="sidedish-title">밑반찬1</dt>
-            <dd class="sidedish-description">밑반찬1 설명</dd>
+            <dt class="sidedish-title">{{ item.title }}</dt>
+            <dd class="sidedish-description">{{ item.description }}</dd>
             <dd class="star-rating-box">
               <span class="star-score-bg">
-                  <span class="star-score" style="width: 80%;">5점 만점에 4점</span>
+                  <span class="star-score" style="width: 80%;">{{ item.score }}}</span>
               </span>
-              <span class="review-count">206</span>
+              <span class="review-count">{{ item.reviewcount}}</span>
             </dd>
             <dd class="item-price">
-              <p class="selling-price">0,000 <span class="unit">원</span></p>
-            </dd>
-          </dl>
-          <div class="badge-area"></div>
-        </a>
-      </li>
-                <!-- 밑반찬 아이템 2-->
-
-      <li class="sidedish-item">
-        <a href="#">
-          <img src="#" alt="" srcset="">
-          <dl>
-            <dt class="sidedish-title">밑반찬2</dt>
-            <dd class="sidedish-description">밑반찬2 설명</dd>
-            <dd class="star-rating-box">
-              <span class="star-score-bg">
-                  <span class="star-score" style="width: 80%;">5점 만점에 4점</span>
-              </span>
-              <span class="review-count">206</span>
-            </dd>
-            <dd class="item-price">
-              <p class="selling-price">0,000 <span class="unit">원</span></p>
-            </dd>
-          </dl>
-          <div class="badge-area"></div>
-        </a>
-      </li>
-                <!-- 밑반찬 아이템 3-->
-
-      <li class="sidedish-item">
-        <a href="#">
-          <img src="#" alt="" srcset="">
-          <dl>
-            <dt class="sidedish-title">밑반찬3</dt>
-            <dd class="sidedish-description">밑반찬3 설명</dd>
-            <dd class="star-rating-box">
-              <span class="star-score-bg">
-                  <span class="star-score" style="width: 80%;">5점 만점에 4점</span>
-              </span>
-              <span class="review-count">206</span>
-            </dd>
-            <dd class="item-price">
-              <p class="selling-price">0,000 <span class="unit">원</span></p>
-            </dd>
-          </dl>
-          <div class="badge-area"></div>
-        </a>
-      </li>
-                <!-- 밑반찬 아이템 4-->
-
-      <li class="sidedish-item">
-        <a href="#">
-          <img src="#" alt="" srcset="">
-          <dl>
-            <dt class="sidedish-title">밑반찬4</dt>
-            <dd class="sidedish-description">밑반찬4 설명</dd>
-            <dd class="star-rating-box">
-              <span class="star-score-bg">
-                  <span class="star-score" style="width: 80%;">5점 만점에 4점</span>
-              </span>
-              <span class="review-count">206</span>
-            </dd>
-            <dd class="item-price">
-              <p class="selling-price">0,000 <span class="unit">원</span></p>
+              <p class="selling-price">{{ item.price }} <span class="unit">원</span></p>
             </dd>
           </dl>
           <div class="badge-area"></div>

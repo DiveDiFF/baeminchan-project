@@ -11,6 +11,12 @@
   overflow: visible;
 }
 
+.main-menu-list::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
 .menu-item {
   float: left;
   position: relative;
@@ -42,7 +48,7 @@
   display: inline-block;
   color: #fff;
   font-size: 16px;
-  /* font-family: "NanumBold", "맑은고딕", "Malgun Gothic", sans-serif; */
+  font-family: "NanumBold", "맑은고딕", "Malgun Gothic", sans-serif;
   font-weight: bold;
   height: 36px;
   padding: 11px 25px 0;

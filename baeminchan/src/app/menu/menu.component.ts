@@ -30,12 +30,14 @@ export class MenuComponent implements OnInit {
     this.subMenu8 = ['반찬가게', '반찬장인', '셰프의요리', '전국맛집', '키즈관'];
   }
 
-  mouseOver(e) {
-    console.log(e);
+  mouseEnter(e) {
+    console.log('mouseEnter', e);
     this.focusedMenu = e.id;
   }
   mouseLeave() {
+    console.log('mouseLeave');
     this.focusedMenu = '';
+
   }
 
 }

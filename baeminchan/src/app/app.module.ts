@@ -11,6 +11,10 @@ import { HeaderTopMenuComponent } from './header-top-menu/header-top-menu.compon
 import { HeaderHeaderComponent } from './header-header/header-header.component';
 import { MainSlidesComponent } from './main-slides/main-slides.component';
 import { MainItem1Component } from './main-item1/main-item1.component';
+import { MainItem2Component } from './main-item2/main-item2.component';
+import { MainFooterComponent } from './main-footer/main-footer.component';
+import { SidedishMainComponent } from './sidedish-main/sidedish-main.component';
+import { BasketPopupComponent } from './basket-popup/basket-popup.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,10 @@ import { MainItem1Component } from './main-item1/main-item1.component';
     HeaderHeaderComponent,
     MainSlidesComponent,
     MainItem1Component,
+    MainItem2Component,
+    MainFooterComponent,
+    SidedishMainComponent,
+    BasketPopupComponent,
   ],
   imports: [
     BrowserModule
