@@ -1,0 +1,345 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  font-family: 'Nanum', 'Apple Gothic', 'Malgun Gothic', 'Nanum Gothic', 'Dotum', Arial, sans-serif;
+  font-size: 13px;
+  background: #fff;
+  color: #333;
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+.login-box {
+  width: 450px;
+  margin: 80px auto 90px;
+}
+.login-box h2.h2_tlt {
+  font-family: "NanumEB", sans-serif;
+  font-size: 26px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+input, textarea, select, button, meter, progress {
+  -webkit-writing-mode: horizontal-tb !important;
+}
+
+input, textarea, select, button {
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  margin: 0em;
+  font: 400 11px system-ui;
+}
+
+input {
+  -webkit-appearance: textfield;
+  background-color: white;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  padding: 1px;
+  border-width: 2px;
+  border-style: inset;
+  border-color: initial;
+  border-image: initial;
+}
+
+input[type="hidden" i] {
+  display: none;
+}
+
+input[type="hidden" i], input[type="image" i], input[type="file" i] {
+  -webkit-appearance: initial;
+  background-color: initial;
+  cursor: default;
+  padding: initial;
+  border: initial;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: middle;
+}
+
+button, input {
+  line-height: normal;
+}
+
+.hidden {
+  display: none;
+  position: absolute;
+  top: -50000px;
+  left: -50000px;
+  text-indent: -50000px;
+  width: 0;
+  height: 0;
+}
+
+ul, menu, dir {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+
+ol, ul, dl {
+  list-style: none;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+label {
+  cursor: pointer;
+  display: inline;
+  /* display: none; */
+
+}
+
+.input {
+  height: 34px;
+  padding: 0 7px;
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  font-size: 13px;
+  font-weight: bold;
+  color: #444;
+  outline: 0;
+  font-family: Nanum, sans-serif;
+}
+
+.login-box ul li .input {
+  display: block;
+  width: 418px;
+  height: 54px;
+  padding: 0 15px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  font-size: 15px;
+  line-height: 52px;
+  color: #999;
+  font-weight: normal;
+}
+
+.login-box ul li {
+  margin-bottom: 12px;
+}
+
+button {
+  align-items: flex-start;
+  text-align: center;
+  cursor: pointer;
+  color: buttontext;
+  background-color: buttonface;
+  box-sizing: border-box;
+  padding: 2px 6px 3px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  border-image: initial;
+}
+
+button {
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-style: solid;
+  border-width: 1px;
+  padding: 1px 7px 2px;
+}
+
+.btn_mint {
+  background: #2ac1bc;
+  color: #fff;
+}
+
+.login-box button.btn_login {
+  width: 100%;
+  height: 64px;
+  font-size: 18px;
+}
+
+.custom_checkbox {
+  position: relative;
+  display: inline-block;
+}
+
+.login-box .custom_checkbox {
+  float: right;
+  margin: 14px 0 0;
+  color: #999;
+}
+
+i, em, address {
+  font-style: normal;
+  font-weight: normal;
+}
+.custom_checkbox .chk_box {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border: 1px solid #D4D4D4;
+  margin-right: 3px;
+  overflow: hidden;
+  background: url(../../assets/custom_chk_box.png) left 15px no-repeat;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.custom_checkbox .hidden_chk {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 13px;
+  height: 13px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+input[type="checkbox"].bf {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin: 0;
+}
+
+p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+.login-box p.err_msg {
+  font-size: 14px;
+  color: #F45452;
+  padding-top: 42px;
+  text-align: center;
+  clear: both;
+}
+
+.btn_area {
+  overflow: hidden;
+  clear: both;
+}
+
+div.btn_area {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+button, .btn {
+  display: inline-block;
+  zoom: 1;
+  font-family: "Noto Sans KR Bold", "Nanum Gothic", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  overflow: visible;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.btn_kakao {
+  background: #ffea0f;
+  color: #3c1e1e;
+}
+
+.login-box button.btn_login {
+  width: 100%;
+  height: 64px;
+  font-size: 18px;
+}
+
+.login-box button.btn_kakao {
+  margin-top: 20px;
+}
+
+.btn span {
+  display: inline-block;
+  zoom: 1;
+  margin-top: -2px;
+}
+
+.btn_kakao span {
+  position: relative;
+  top: -2px;
+}
+.login-box button span {
+  font-family: NanumBold, sans-serif;
+  font-weight: bold;
+}
+.btn_kakao span.ic {
+  width: 22px;
+  height: 20px;
+  background: url(../../assets/ic_btn_kakao.png) no-repeat center center;
+  margin: 0 10px 0 0;
+  position: relative;
+  top: 2px;
+}
+
+.login-box .link {
+  text-align: center;
+  color: #ccc;
+  margin-top: 20px;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.login-box .link a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #999;
+  padding: 0 8px;
+}

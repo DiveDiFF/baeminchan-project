@@ -7,6 +7,10 @@ import { MenuComponent } from './menu/menu.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContainerComponent } from './container/container.component';
+import { SigninComponent } from './signin/signin.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +19,13 @@ import { ContainerComponent } from './container/container.component';
     MenuComponent,
     MainComponent,
     FooterComponent,
-    ContainerComponent
+    ContainerComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
