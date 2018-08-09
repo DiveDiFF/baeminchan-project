@@ -5,6 +5,13 @@
   overflow: hidden;
 }
 
+.content {
+  position: relative;
+  width: 980px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 #footer .fnb_wrap {
   border-top: 1px solid #e9e9e9;
   text-align: left;
