@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+* {
+  box-sizing: content-box;
+}
+
+body {
+  font-family: 'Nanum', 'Apple Gothic', 'Malgun Gothic', 'Nanum Gothic', 'Dotum', Arial, sans-serif;
+  font-size: 13px;
+  background: #fff;
+  color: #333;
+}
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block;
+}
+
+ol, ul, dl {
+  list-style: none;
+}
+
+i, em, address {
+  font-style: normal;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+}
+
+.hidden {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  line-height: 0;
+  margin-top: -1px;
+}
+
+button, .btn {
+  display: inline-block;
+  zoom: 1;
+  font-family: "Noto Sans KR Bold", "Nanum Gothic", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  overflow: visible;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+

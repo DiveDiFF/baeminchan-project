@@ -1,0 +1,62 @@
+<main class="item-wrapper">
+  <h2 class="hidden">메뉴 리스트</h2>
+  <!-- 반찬리스트 1. 밑반찬-->
+  <div class="prd-wrapper">
+    <div class="mtlt">
+      <h3>밑반찬</h3>
+      <p>언제 먹어도 든든한 반찬</p>
+    </div>
+    <div class="prds-thumb-slides-wrap">
+      <div class="bx-wrapper">
+        <div class="bx-viewport">
+          <ul id="sidedish" class="sidedish-list prd-list" [ngStyle]="{ 'transform': thumbChange(), 'transition-duration': thumbChangeDuration() }">
+            <!-- 밑반찬 아이템 1-->
+            <li class="sidedish-item prd-item" *ngFor="let item of rotateItems">
+              <a [href]="item.url">
+                <div class="thumb-img">
+                  <img [src]="item.img" alt="" srcset="">
+                </div>
+                <dl>
+                  <dt class="sidedish-title prd-item-title">{{ item.title }}</dt>
+                  <dd class="sidedish-description prd-item-des">{{ item.description }}</dd>
+                  <dd class="star-rating-box">
+                    <span class="star-score-bg">
+                      <span class="star-score" [ngStyle]="{ 'width.%': starScoreStyle(item.score) }">{{ item.score }}</span>
+                    </span>
+                    <span class="review-count">{{ item.reviewcount}}</span>
+                  </dd>
+                  <dd class="prd-price">
+                    <p class="selling-price">{{ item.price }}
+                      <span class="unit">원</span>
+                    </p>
+                    <p class="origin-price">
+                      <del>7,300</del>
+                    </p>
+                  </dd>
+                </dl>
+                <div class="badge-area">
+                  <div class="badge event">
+                    <span>이벤트특가</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a class="btn-more">
+      <span>밑반찬 전체보기</span>
+    </a>
+  </div>
+  <div class="slides-item-navi">
+    <a href="javascript:void(0);" class="slides-prev" title="이전" (click)="thumbSlidePrev()">이전</a>
+    <a href="javascript:void(0);" class="slides-next" title="다음" (click)="thumbSlideNext()">다음</a>
+  </div>
+  <div class="prds_banner g2" style="background-image:url(https://cdn.bmf.kr/banner/main_event/170628/1498639751272_e6cadbda65b4.jpg); background-color:#dad8d3;">
+    <p>
+      <a>
+        소중한식사 </a>
+    </p>
+  </div>
+</main>

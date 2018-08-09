@@ -1,0 +1,126 @@
+#footer {
+  position: relative;
+  clear: both;
+  background: #fff;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  width: 980px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#footer .fnb_wrap {
+  border-top: 1px solid #e9e9e9;
+  text-align: left;
+  position: relative;
+}
+
+#footer .fnb_wrap ul.fnb {
+  overflow: hidden;
+  padding: 35px 0 22px;
+}
+
+#footer .fnb_wrap ul.fnb li {
+  float: left;
+  margin-left: 9px;
+  border-right: 1px solid #d1d1d1;
+  letter-spacing: 0;
+}
+
+#footer .fnb_wrap ul.fnb li:first-child {
+  margin-left: 0;
+}
+
+#footer .fnb_wrap ul.fnb li a {
+  display: block;
+  padding-right: 10px;
+  font-family: "NanumBold", sans-serif;
+  font-size: 13px;
+  color: #666;
+  text-decoration: none;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+#footer .fnb_wrap ul.fnb li.strong a {
+  color: #000;
+}
+
+#footer .fnb_wrap ul.fnb li:last-child {
+  border-right: none;
+}
+
+#footer .fnb_info_wrap {
+  background: #fff;
+  position: relative;
+}
+
+#footer .fnb_info_wrap .content {
+  font-size: 12px;
+  color: #888;
+  letter-spacing: -0.01em;
+}
+
+#footer .fnb_info_wrap ul.fnb_info_lst {
+  width: 820px;
+}
+
+#footer .fnb_info_wrap ul.fnb_info_lst li {
+  display: inline-block;
+  zoom: 1;
+  margin: 0 3px 6px 0;
+  padding-right: 9px;
+  background: url("https://cdn.bmf.kr/web/common/footer_bar.gif") no-repeat right center;
+}
+
+#footer .fnb_info_wrap ul.fnb_info_lst li a {
+  color: #c3c3c3;
+}
+
+#footer .fnb_info_wrap ul.fnb_info_lst li.last {
+  border-right: none;
+  background: none;
+}
+
+#footer .fnb_info_wrap .copyright {
+  color: #333;
+  margin: 15px 0 20px;
+}
+
+#footer .fnb_info_wrap .bottom_copy {
+  margin: 0 0 30px;
+  color: #999;
+  line-height: 1.6em;
+}
+
+#footer .sns_box {
+  float: right;
+  position: absolute;
+  top: 31px;
+  right: 50%;
+  margin-right: -490px;
+}
+
+#footer .sns_box a {
+  display: block;
+  zoom: 1;
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 0 0 0 10px;
+  font-size: 11px;
+  color: #fff;
+  text-indent: -3000px;
+  background: no-repeat center center;
+}
+
+#footer .sns_box a.link_blog {
+  background-image: url("https://cdn.bmf.kr/web/common/sns_instagram.png");
+}
+
+#footer .sns_box a.link_facebook {
+  background-image: url("https://cdn.bmf.kr/web/common/sns_facebook.png");
+}
