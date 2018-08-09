@@ -1,0 +1,450 @@
+#container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.sub_visual_banner {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.wrap {
+  position: relative;
+}
+
+.content {
+  position: relative;
+  width: 980px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+ul.breadcrumbbox.list {
+  float: left;
+  height: 15px;
+  padding: 15px 0 10px 5px;
+  clear: both;
+}
+
+ul.breadcrumbbox li {
+  float: left;
+  font-size: 13px;
+}
+
+ul.breadcrumbbox li a {
+  color: #888;
+  padding: 0 0 0 22px;
+  background: url("http://cdn.bmf.kr/web/common/breadcrumb.gif") no-repeat 10px center;
+}
+
+ul.breadcrumbbox li:first-child a {
+  background: none;
+  padding-left: 0;
+}
+
+ul.breadcrumbbox li:last-child a {
+  color: #333;
+  font-family: NanumBold, sans-serif;
+}
+
+
+ul.choice_category_lst {
+  overflow: hidden;
+  border: 1px solid #d6d6d6;
+  margin: 40px 0 0;
+  padding: 15px 30px 6px;
+}
+
+ul.choice_category_lst li {
+  font-family: "Noto Sans KR", sans-serif;
+  float: left;
+  line-height: 18px;
+  height: 35px;
+  margin: 5px 30px 0 0;
+}
+
+ul.choice_category_lst li a {
+  display: block;
+  text-align: center;
+  font-family: "Noto Sans KR Bold", sans-serif;
+  font-size: 16px;
+  color: #888;
+}
+
+h3.tlt_cate_h3 {
+  font-family: "Noto Sans KR Bold", sans-serif;
+  font-size: 26px;
+  color: #333;
+  text-align: center;
+  margin: 40px 0 30px;
+}
+
+ul.prds_lst {
+  font-family: "Noto Sans KR", sans-serif;
+  letter-spacing: -0.03em;
+  position: relative;
+  margin: 0 2px;
+  overflow: hidden;
+  clear: both;
+}
+
+ul.prds_lst li {
+  position: relative;
+  display: inline-block;
+  zoom: 1;
+  float: left;
+  width: 235px;
+  margin: 0 12px 40px 0;
+  background: #fff;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+ul.prds_lst li .imgthumb {
+  position: relative;
+  background: #e1e1e1;
+  overflow: hidden;
+  width: 235px;
+  height: 235px;
+}
+
+.imgthumb img {
+  width: 100%;
+  display: inline-block;
+}
+
+ul.prds_lst li .imgthumb img {
+  max-width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+ul.prds_lst li .imgthumb a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0,0,0,0.07);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.thumb_badge {
+  font-family: "Noto Sans KR Bold", sans-serif;
+  letter-spacing: -0.03em;
+  position: absolute;
+  width: 68px;
+  height: 48px;
+  padding-top: 24px;
+  color: #fff;
+  text-align: center;
+  background: url("http://cdn.bmf.kr/web/common/thumb_badge.png") no-repeat center center;
+}
+
+ul.prds_lst li .imgthumb .thumb_badge {
+  top: 10px;
+  right: 10px;
+}
+
+.thumb_badge span.num {
+  font-size: 20px;
+}
+
+.thumb_badge span.unit {
+  font-size: 15px;
+}
+
+ul.prds_lst li .prds_lst_info {
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  padding: 16px 16px 12px;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ul.prds_lst li .prds_lst_info .prd_tlt a {
+  display: block;
+  font-family: "Noto Sans KR Bold", sans-serif;
+  font-size: 14px;
+  margin-bottom: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+ul.prds_lst li .prds_lst_info .star-rating-box {
+  overflow: hidden;
+  margin-bottom: 1px;
+}
+
+ul.prds_lst li .prds_lst_info .star-rating-box .star-score-bg {
+  position: relative;
+  display: inline-block;
+  width: 67px;
+  height: 12px;
+  background: url("http://cdn.bmf.kr/web/common/ico-review-star.png") no-repeat left top;
+  background-size: auto 24px;
+}
+
+ul.prds_lst li .prds_lst_info .star-rating-box .star-score-bg .star-score {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: -3000px;
+  background: url("http://cdn.bmf.kr/web/common/ico-review-star.png") no-repeat left bottom;
+  background-size: auto 24px;
+}
+
+ul.prds_lst li .prds_lst_info .star-rating-box .review-count {
+  display: inline-block;
+  font-size: 14px;
+  color: #999;
+}
+
+ul.prds_lst li .prds_lst_info .prd_thumb_price {
+  position: relative;
+  color: #333;
+}
+
+ul.prds_lst li .prds_lst_info .prd_thumb_price p {
+  position: relative;
+  display: inline-block;
+  font-family: "Noto Sans KR Bold", sans-serif;
+}
+
+ul.prds_lst li .prds_lst_info .prd_thumb_price p.selling-price {
+  font-size: 16px;
+  letter-spacing: -0.05em;
+  margin-right: 5px;
+}
+
+ul.prds_lst li .prds_lst_info .prd_thumb_price p.origin-price {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 12px;
+  color: #999;
+}
+
+ul.prds_lst li .prds_lst_info .prd_to_basket {
+  overflow: hidden;
+  position: relative;
+  margin: 12px 0 4px;
+}
+
+.prd_account {
+  position: relative;
+  width: 67px;
+  height: 31px;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: hidden;
+  float: left;
+}
+
+.clearfix::before, .clearfix::after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+button, input {
+  line-height: normal;
+}
+
+.prd_account input {
+  display: block;
+  float: left;
+  border: none;
+  width: 47px;
+  height: 31px;
+  padding: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.prd_account span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  float: left;
+  width: 19px;
+  height: 31px;
+  border-left: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.prd_account span a {
+  display: block;
+  float: left;
+  width: 19px;
+  height: 15px;
+  text-indent: -3000px;
+  background: url("http://cdn.bmf.kr/web/common/ic_acc_up_down.png") no-repeat #fff;
+}
+
+.prd_account span a.up {
+  background-position: center 4px;
+  border-bottom: 1px solid #ccc;
+}
+
+.prd_account span a.down {
+  background-position: center -7px;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+button, .btn {
+  display: inline-block;
+  zoom: 1;
+  font-family: "Noto Sans KR Bold", "Nanum Gothic", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  overflow: visible;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.btn_gray {
+  background: #9e9992;
+  color: #fff;
+}
+
+button.prd_thumb_btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 124px;
+  height: 33px;
+  font-size: 14px;
+  padding-top: 3px;
+}
+
+ul.prds_lst li:nth-child(4n) {
+  margin-right: 0;
+}
+
+.pagination {
+  position: relative;
+  margin: 0px auto 30px;
+  width: 100%;
+  text-align: center;
+  font-size: 0;
+  line-height: 0;
+}
+
+.pagination .num {
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+.pagination .num a {
+  display: inline-block;
+  margin: 0 1px;
+  padding-top: 5px;
+  width: 28px;
+  height: 23px;
+  vertical-align: middle;
+  color: #888;
+  font-size: 13px;
+  line-height: 1.3;
+  border: 1px solid #fff;
+}
+
+.pagination .num a.current {
+  color: #0fbfb9;
+  font-weight: bold;
+  border-color: #e1e1e1;
+}
+
+.btn-paging {
+  overflow: hidden;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  font-size: 0;
+  line-height: 0;
+  background: url("http://cdn.bmf.kr/web/common/sp_btn_paging.png") no-repeat;
+}
+
+.btn-paging.next {
+  background-position: -25px 10px;
+}
+
+.b2b-banner {
+  overflow: hidden;
+  position: relative;
+  font-family: "Noto Sans KR", sans-serif;
+  letter-spacing: -0.05em;
+  height: 136px;
+  margin: 0 2px 40px;
+  padding: 30px 120px 30px 550px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.b2b-banner h3 {
+  float: left;
+  margin-right: 60px;
+  font-family: "Noto Sans KR Light", sans-serif;
+  font-size: 38px;
+  color: #555;
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  -webkit-transform: translate(0, -40%);
+  -moz-transform: translate(0, -40%);
+  -ms-transform: translate(0, -40%);
+  transform: translate(0, -40%);
+}
+
+.b2b-banner a {
+  overflow: hidden;
+  display: block;
+  background: #2ac1bc;
+  padding: 10px 10px 8px;
+  margin-bottom: 10px;
+  font-family: "Noto Sans KR Bold", sans-serif;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.b2b-banner p {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.b2b-banner p strong {
+  font-family: "Noto Sans KR Bold", sans-serif;
+}

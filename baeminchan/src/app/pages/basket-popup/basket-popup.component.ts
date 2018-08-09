@@ -27,7 +27,7 @@ export class BasketPopupComponent implements OnInit {
     return this.scrollOn ? 'fixed' : 'absolute';
   }
   getBastketTop() {
-    return this.scrollOn ? 40 : 630;
+    return this.scrollOn ? 0 : 497;
   }
 
 

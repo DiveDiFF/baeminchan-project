@@ -4,17 +4,17 @@
     <li class="main-slides-item" *ngFor="let image of images"
          [class.active]="currentState === image.id"
          [ngStyle]="{ 'background-image': 'url('+ image.url + ')' }" >
-      <a href="#"></a>
+      <a></a>
     </li>
   </ul>
   <div class="slides-navi">
-      <a href="#" class="slides-prev" title="이전"
+      <a class="slides-prev" title="이전"
       (click)="prevSlide()"></a>
-      <a href="#" class="slides-next" title="다음"
+      <a class="slides-next" title="다음"
       (click)="nextSlide()"></a>
   </div>
   <ul class="slides-pagination">
-      <li *ngFor="let pagination of paginations"><a href="#"
+      <li *ngFor="let pagination of paginations"><a
         [class.now]="currentState === pagination"
         (click)="changeNow(pagination)">{{ pagination }}</a></li>
         </ul>
