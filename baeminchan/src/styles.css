@@ -46,6 +46,19 @@ label {
   cursor: pointer;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+colgroup {
+  display: table-column-group;
+}
+
+col {
+  display: table-column;
+}
+
 .hidden {
   overflow: hidden;
   position: absolute;

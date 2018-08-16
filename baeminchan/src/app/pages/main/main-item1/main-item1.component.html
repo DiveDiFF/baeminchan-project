@@ -21,7 +21,7 @@
                   <dd class="sidedish-description prd-item-des">{{ item.description }}</dd>
                   <dd class="star-rating-box">
                     <span class="star-score-bg">
-                      <span class="star-score" [ngStyle]="{ 'width.%': starScoreStyle(item.score) }">{{ item.score }}</span>
+                      <span class="star-score" [ngStyle]="{ 'width.%': api.starScoreStyle(item.score) }">{{ item.score }}</span>
                     </span>
                     <span class="review-count">{{ item.reviewcount}}</span>
                   </dd>

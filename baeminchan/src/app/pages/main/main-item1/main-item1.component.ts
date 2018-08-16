@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductApiService } from '../../../module/product-api.service';
 
 interface Item {
   id: number;
@@ -23,7 +24,7 @@ export class MainItem1Component implements OnInit {
   changePage = false;
   rotateItems: Item[];
   translateWidth = -980;
-  constructor() { }
+  constructor( public api: ProductApiService ) { }
 
   ngOnInit() {
     this.items = [
@@ -67,30 +68,6 @@ export class MainItem1Component implements OnInit {
     ];
 
     this.imageRotate(this.items);
-  }
-
-  starScoreStyle(score: string) {
-    switch (score) {
-      case '5점 만점에 5점':
-        return 100;
-      case '5점 만점에 4.5점':
-        return 90;
-      case '5점 만점에 4점':
-        return 80;
-      case '5점 만점에 3.5점':
-        return 70;
-      case '5점 만점에 3점':
-        return 60;
-      case '5점 만점에 2.5점':
-        return 50;
-      case '5점 만점에 2점':
-        return 40;
-      case '5점 만점에 1.5점':
-        return 30;
-      case '5점 만점에 1점':
-        return 20;
-      default: return 0;
-    }
   }
 
   thumbSlidePrev() {

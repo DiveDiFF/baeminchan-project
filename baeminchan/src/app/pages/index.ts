@@ -12,3 +12,7 @@ export * from './main/main-footer/main-footer.component';
 export * from './basket-popup/basket-popup.component';
 export * from './item-list/item-list.component';
 export * from './item-list/item-list-main/item-list-main.component';
+export * from './signin/signin.component';
+export * from './signup/signup.component';
+export * from './item-detail/item-detail.component';
+export * from './item-detail/item-detail-main/item-detail-main.component';

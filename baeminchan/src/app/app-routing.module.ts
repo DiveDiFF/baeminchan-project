@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {
   MainComponent,
   ItemListComponent,
+  SigninComponent,
+  ItemDetailComponent
 } from './pages';
 
 // 라우트 구성
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
   { path: 'index', component: MainComponent },
   { path: 'itemlist', component: ItemListComponent },
+  { path: 'login', component: SigninComponent },
+  { path: 'itemdetail', component: ItemDetailComponent },
 ];
 
 @NgModule({

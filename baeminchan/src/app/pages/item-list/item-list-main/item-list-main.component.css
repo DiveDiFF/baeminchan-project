@@ -67,6 +67,13 @@ ul.choice_category_lst li {
   margin: 5px 30px 0 0;
 }
 
+ul.choice_category_lst li a:hover span, ul.choice_category_lst li a:focus span, ul.choice_category_lst li a.now span {
+  border-bottom: 3px solid #333;
+  color: #333;
+  padding-bottom: 3px;
+  text-decoration: none;
+}
+
 ul.choice_category_lst li a {
   display: block;
   text-align: center;
@@ -393,8 +400,26 @@ ul.prds_lst li:nth-child(4n) {
   background: url("http://cdn.bmf.kr/web/common/sp_btn_paging.png") no-repeat;
 }
 
+.pagination .num a:hover {
+  color: #0fbfb9;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-paging.prev {
+  background-position: 11px 10px;
+}
+
+.btn-paging.prev:hover {
+  background-position: 11px -72px;
+}
+
 .btn-paging.next {
   background-position: -25px 10px;
+}
+
+.btn-paging.next:hover {
+  background-position: -25px -72px;
 }
 
 .b2b-banner {

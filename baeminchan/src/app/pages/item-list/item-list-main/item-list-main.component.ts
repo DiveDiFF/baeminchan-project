@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductApiService } from '../../../module/product-api.service';
 
 @Component({
   selector: 'app-itemlist-main',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemListMainComponent implements OnInit {
 
-  constructor() { }
+  currentPage = 1;
+  pages = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
+
+  constructor(public api: ProductApiService) { }
 
   ngOnInit() {
+    this.api.getItemList(this.api.nowActiveMenu);
   }
-
 }

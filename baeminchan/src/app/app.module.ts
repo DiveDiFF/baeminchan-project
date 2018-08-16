@@ -1,12 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-
-import { SigninComponent } from './signin/signin.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { SignupComponent } from './signup/signup.component';
 
 import {
   HeaderComponent,
@@ -23,6 +21,10 @@ import {
   BasketPopupComponent,
   ItemListComponent,
   ItemListMainComponent,
+  SigninComponent,
+  SignupComponent,
+  ItemDetailComponent,
+  ItemDetailMainComponent,
 } from './pages';
 
 @NgModule({
@@ -43,12 +45,15 @@ import {
     ItemListComponent,
     ItemListMainComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    ItemDetailComponent,
+    ItemDetailMainComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
