@@ -1,13 +1,13 @@
 <div id="container">
   <div class="wrap">
 
-    <div id="app" class="content">
+    <div id="app" class="content" *ngIf="api.productItemDetail">
       <ul id="breadcrumbbox" class="breadcrumbbox detail">
         <li>
           <a>홈</a>
         </li>
         <li>
-          <a *ngIf="api.productItemDetail">{{ parentCategory(api.productItemDetail.category.parent_category.name) }}</a>
+          <a>{{ parentCategory(api.productItemDetail.category.parent_category.name) }}</a>
         </li>
       </ul>
       <div class="product_detail_top clearfix">
@@ -15,8 +15,8 @@
           <div class="image_top">
             <img [src]="api.productItemDetail.thumbnail_url" alt="" class="top_detail_image">
             <i class="brd_box"></i>
-            <div class="thumb_badge">
-              <span class="num">10</span>
+            <div class="thumb_badge" *ngIf="api.productItemDetail.discount_rate">
+              <span class="num">{{ api.productItemDetail.discount_rate }}</span>
               <span class="unit">%</span>
             </div>
           </div>
@@ -41,27 +41,27 @@
           </div>
         </div>
         <div class="detail_top_desc">
-          <div class="badgebox launching">
+          <div class="badgebox launching" *ngIf="api.productItemDetail.discount_rate">
             <span>이벤트특가</span>
           </div>
-          <h1 class="desc_product_name">[마더앤찬] 열무 얼갈이 김치 400g</h1>
-          <p class="desc_bt_txt">시원한 멸치 육수에 소면 말아 곁들여 드셔보세요!</p>
+          <h1 class="desc_product_name">{{ api.productItemDetail.raw_name}}}</h1>
+          <p class="desc_bt_txt">{{ api.productItemDetail.description }}</p>
           <dl class="desc_info">
             <dt>적립금</dt>
-            <dd>59원</dd>
+            <dd> {{ api.productItemDetail.point_amount }}원</dd>
             <dt>배송타입</dt>
             <dd>
-              새벽배송 (서울, 경기 일부)
+              {{ api.productItemDetail.delivery_type }}
               <br>전국택배 (제주/도서산간 제외)
             </dd>
             <dt>수령요일</dt>
             <dd>
-              <strong>화, 수, 목, 금, 토요일</strong> 수령 가능 (택배는 월요일 제외)
+              <strong>{{ api.productItemDetail.delivery_days}}</strong> 수령 가능 (택배는 월요일 제외)
             </dd>
             <dt class="blind">가격</dt>
             <dd class="desc_price">
-              <del class="origin-price">6,500원</del>
-              <strong class="sale-price">5,850
+              <del class="origin-price" *ngIf="api.productItemDetail.discount_rate">{{ api.productItemDetail.price | currency:'KRW':'symbol':'1.0' }}</del>
+              <strong class="sale-price">{{ api.productItemDetail.sale_price | currency:'KRW':'symbol':'1.0' }}
                 <span class="unit">원</span>
               </strong>
             </dd>
@@ -91,8 +91,8 @@
                   <strong id="detail_total_price" class="price_number">5,850</strong>
                   <span class="unit">원</span>
                 </p>
-                <button type="button" data-tune-button-index="detail" data-tune-type="addToCartPc" data-tune-price="5850"
-                  data-tune-name="[마더앤찬] 열무 얼갈이 김치 400g" class="btn btn_mint btn_into_basket purchageable" data-tune-bind="true">담기</button>
+                <button type="button" data-tune-button-index="detail" data-tune-type="addToCartPc"
+                  class="btn btn_mint btn_into_basket purchageable" data-tune-bind="true">담기</button>
               </fieldset>
             </form>
           </div>
@@ -124,35 +124,31 @@
         </div>
         <div id="detail_information" class="product_detail_section">
           <div class="product_detail_img_box">
-            <img src="https://cdn.bmf.kr/_data/product/H200A/07b83fa52d9be836523a8cda1be0d587.jpg">
-            <img src="https://cdn.bmf.kr/_data/product/H200A/c24b7c20d26c729600c1ca9179e84997.jpg">
+            <img *ngFor="let productimg of api.productItemDetail.productimage_set" [src]="productimg.image_url">
+            <!-- <img src="https://cdn.bmf.kr/_data/product/H200A/c24b7c20d26c729600c1ca9179e84997.jpg">
             <img src="https://cdn.bmf.kr/_data/product/H200A/976df60b3e26b89910b99dc0ebb875dd.jpg">
             <img src="https://cdn.bmf.kr/_data/product/H200A/8ec7004baadc50efba89b0939e3b356c.jpg">
             <img src="https://cdn.bmf.kr/_data/product/H200A/b955d2ef9f5a31378c5bea02c929b072.jpg">
             <img src="https://cdn.bmf.kr/_data/product/H200A/a5a7d0eab87754489e6d5049f9680a47.jpg">
             <img src="https://cdn.bmf.kr/_data/product/H200A/df35a4c3ea1393cc0ac4b9845541a1e3.jpg">
             <img src="https://cdn.bmf.kr/_data/product/H200A/f99704cc9d12b9856ef79c844e23d876.jpg">
-            <img src="https://cdn.bmf.kr/_data/product/H200A/07d0b903b174e2b089cfcf1e8190ce5c.jpg">
-            <a>
-              <img src="https://cdn.bmf.kr/_data/files/product/1849/8d3b2539ae60462b4ffe4db567e4bc56.jpg">
-            </a>
+            <img src="https://cdn.bmf.kr/_data/product/H200A/07d0b903b174e2b089cfcf1e8190ce5c.jpg"> -->
           </div>
           <br>
           <br>
-          <a target="_blank" onfocus="this.blur()">
-            <img src="https://cdn.bmf.kr/_data/banner/2f2557c82a2c501c30ead842d6e21f43.jpg" border="0">
-          </a>
+          <img src="https://cdn.bmf.kr/_data/banner/2f2557c82a2c501c30ead842d6e21f43.jpg" border="0">
           <br>
           <div class="product_detail_official">
             <h2 class="product_detail_heading">
-              <a href="#detail_official_information" title="접어두기">상품정보고시
+              <a [title]="foldingTitle1"
+                  (click)="folingMenuBtn()">상품정보고시
                 <span class="ico_box">
-                  <i class="ico_folding unfolded">▾</i>
+                  <i class="ico_folding" [class.unfolded]="foldingMenu1">▾</i>
                 </span>
               </a>
             </h2>
-            <div id="detail_official_information" class="detail_official_info">
-              <h3 class="product_name">[마더앤찬] 열무 얼갈이 김치 400g </h3>
+            <div id="detail_official_information" class="detail_official_info" [ngStyle]="{ 'display' : foldingMenu1 ? 'block' : 'none' }">
+              <h3 class="product_name">{{ api.productItemDetail.raw_name }} </h3>
               <table class="table_detail_info table_official_info">
                 <colgroup>
                   <col width="245px">
@@ -161,11 +157,11 @@
                 <tbody>
                   <tr class="fir">
                     <th scope="col">식품의 유형</th>
-                    <td>즉석조리식품</td>
+                    <td>{{ api.productItemDetail.type }}</td>
                   </tr>
                   <tr>
                     <th scope="col">생산자 및 소재지(수입품의 경우 수입자를 함께 표기)</th>
-                    <td>생산자: 마더앤찬(서울 동대문구 답십리동 322-13, 2층 마더앤찬)</td>
+                    <td>생산자: {{ api.productItemDetail.supplier }}(서울 동대문구 답십리동 322-13, 2층)</td>
                   </tr>
                   <tr>
                     <th scope="col">제조연월일, 유통기한 또는 품질유지기한</th>
@@ -174,11 +170,11 @@
                   </tr>
                   <tr>
                     <th scope="col">포장단위별 용량(중량), 수량</th>
-                    <td>400g</td>
+                    <td>{{ api.productItemDetail.weight }}g, {{ api.productItemDetail.stock }}</td>
                   </tr>
                   <tr>
                     <th scope="col">원재료명 및 함량</th>
-                    <td>열무(국내산)39%, 얼갈이 배추(국내산)37%, 고춧가루(국내산50%, 중국산50%), 멸치액젓(국내산), 마늘, 생강, 밀가루풀, 소금, 새우젓 </td>
+                    <td>{{ api.productItemDetail.materials }}</td>
                   </tr>
                   <tr>
                     <th scope="col">유전자재조합식품 여부</th>
@@ -198,7 +194,7 @@
                   </tr>
                   <tr>
                     <th scope="col">알레르기 유발물질</th>
-                    <td>알레르기 표시: 밀, 새우 함유
+                    <td>알레르기 표시: {{ api.productItemDetail.alert_allergy }}
                       <br>
                     </td>
                   </tr>
@@ -213,13 +209,14 @@
           </div>
           <div class="product_detail_official">
             <h2 class="product_detail_heading">
-              <a href="#seller_detail_official_information" title="접어두기">판매자정보
+              <a [title]="foldingTitle2"
+                 (click)="folingMenuBtn2()">판매자정보
                 <span class="ico_box">
-                  <i class="ico_folding unfolded">▾</i>
+                  <i class="ico_folding" [class.unfolded]="foldingMenu2">▾</i>
                 </span>
               </a>
             </h2>
-            <div id="seller_detail_official_information" class="detail_official_info">
+            <div id="seller_detail_official_information" class="detail_official_info" [ngStyle]="{ 'display' : foldingMenu2 ? 'block' : 'none' }">
               <h3 class="product_name"></h3>
               <table class="table_detail_info table_official_info">
                 <colgroup>
@@ -230,7 +227,7 @@
                   <tr class="fir">
                     <th scope="col">상호/대표자</th>
                     <td>
-                      마더앤찬/정유순 </td>
+                      {{ api.productItemDetail.supplier }}/정유순 </td>
                   </tr>
                   <tr>
                     <th scope="col">연락처</th>
@@ -270,13 +267,14 @@
         <div id="detail_general_information" class="product_detail_general">
           <div class="product_detail_section">
             <h2 class="product_detail_heading">
-              <a href="#detail_general_area" title="접어두기" data-cookie_id="cda">배민찬 새벽배송 지역안내
+              <a [title]="foldingTitle3"
+              (click)="folingMenuBtn3()">배민찬 새벽배송 지역안내
                 <span class="ico_box">
-                  <i class="ico_folding unfolded">▾</i>
+                  <i class="ico_folding" [class.unfolded]="foldingMenu3">▾</i>
                 </span>
               </a>
             </h2>
-            <div id="detail_general_area">
+            <div id="detail_general_area" [ngStyle]="{ 'display' : foldingMenu3 ? 'block' : 'none' }">
               <p class="heading_bt_txt">[서울/경기/인천 새벽배송, 새벽배송 불가 지역은 '안전신선택배'로 전국배송]</p>
               <div class="delivery_tb_wrap">
                 <ul class="delivery_cate">

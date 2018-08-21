@@ -7,7 +7,12 @@ import { ProductApiService } from '../../../module/product-api.service';
   styleUrls: ['./item-detail-main.component.css']
 })
 export class ItemDetailMainComponent implements OnInit {
-
+  foldingMenu1 = true;
+  foldingMenu2 = true;
+  foldingMenu3 = true;
+  foldingTitle1 = '접어두기';
+  foldingTitle2 = '접어두기';
+  foldingTitle3 = '접어두기';
   constructor(public api: ProductApiService) { }
 
   ngOnInit() {
@@ -34,5 +39,18 @@ export class ItemDetailMainComponent implements OnInit {
       default:
         return '';
     }
+  }
+
+  folingMenuBtn() {
+    this.foldingMenu1 = !this.foldingMenu1;
+    this.foldingTitle1 = this.foldingTitle1 === '접어두기' ? '펼치기' : '접어두기';
+  }
+  folingMenuBtn2() {
+    this.foldingMenu2 = !this.foldingMenu2;
+    this.foldingTitle2 = this.foldingTitle2 === '접어두기' ? '펼치기' : '접어두기';
+  }
+  folingMenuBtn3() {
+    this.foldingMenu3 = !this.foldingMenu3;
+    this.foldingTitle3 = this.foldingTitle3 === '접어두기' ? '펼치기' : '접어두기';
   }
 }

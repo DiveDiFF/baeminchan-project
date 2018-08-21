@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+interface Itemlist {
+  count: number;
+  next: string;
+  previous: string;
+  results: object[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +28,7 @@ export class ProductApiService {
 
   getItemList(listSortItem) {
     this.nowActiveMenu = listSortItem;
-    this.http.get('https://server.yeojin.me/api/products/?parent_category=side-dish&category=' + this.nowActiveMenu)
+    this.http.get<Itemlist>('https://server.yeojin.me/api/products/?parent_category=side-dish&category=' + this.nowActiveMenu)
     .subscribe(itemlist => {
       this.productItemLists = itemlist.results;
       this.itemlistNextURL = itemlist.next;
@@ -30,7 +37,7 @@ export class ProductApiService {
   }
 
   getNextList() {
-    this.http.get(this.itemlistNextURL)
+    this.http.get<Itemlist>(this.itemlistNextURL)
     .subscribe(itemlist => {
       this.productItemLists = [...this.productItemLists, ...itemlist.results];
       this.itemlistNextURL = itemlist.next;

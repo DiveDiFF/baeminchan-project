@@ -97,6 +97,11 @@ ul.breadcrumbbox li:last-child a {
   background: url("http://cdn.bmf.kr/web/common/thumb_badge.png") no-repeat center center;
 }
 
+.product_detail_top .detail_top_image .image_top .thumb_badge {
+  top: 20px;
+  right: 16px;
+}
+
 .thumb_badge span.num {
   font-size: 20px;
 }
@@ -227,6 +232,7 @@ ul.breadcrumbbox li:last-child a {
 
 .product_detail_top .detail_top_desc .desc_info dd strong {
   font-family: "Noto Sans KR Bold", sans-serif;
+  font-weight: bold;
 }
 
 .blind, hr {
