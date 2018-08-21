@@ -13,7 +13,7 @@
       <div class="product_detail_top clearfix">
         <div class="detail_top_image">
           <div class="image_top">
-            <img src="https://cdn.bmf.kr/_data/product/I6151/b466ee9a34c548e52d76080b0e7aed81.jpg" alt="" class="top_detail_image">
+            <img [src]="api.productItemDetail.thumbnail_url" alt="" class="top_detail_image">
             <i class="brd_box"></i>
             <div class="thumb_badge">
               <span class="num">10</span>
@@ -41,8 +41,8 @@
           </div>
         </div>
         <div class="detail_top_desc">
-          <div class="badge launching">
-            <span>론칭특가</span>
+          <div class="badgebox launching">
+            <span>이벤트특가</span>
           </div>
           <h1 class="desc_product_name">[마더앤찬] 열무 얼갈이 김치 400g</h1>
           <p class="desc_bt_txt">시원한 멸치 육수에 소면 말아 곁들여 드셔보세요!</p>

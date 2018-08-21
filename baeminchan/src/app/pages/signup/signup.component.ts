@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { formControlBinding } from '../../../node_modules/@angular/forms/src/directives/ng_model';
+// import { formControlBinding } from '../../../node_modules/@angular/forms/src/directives/ng_model';
 
 @Component({
   selector: 'app-signup',

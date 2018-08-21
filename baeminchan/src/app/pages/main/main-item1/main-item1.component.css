@@ -260,6 +260,8 @@ ul.prd-list li.prd-item .badge-area {
   z-index: 1000;
 }
 
+
+
 .slides-item-navi a.slides-prev {
   left: 50%;
   margin-left: -558px;
@@ -271,6 +273,15 @@ ul.prd-list li.prd-item .badge-area {
   margin-right: -558px;
   background-position: right top;
 }
+
+.slides-item-navi a.slides-prev:hover {
+  background-position: left bottom;
+}
+
+.slides-item-navi a.slides-next:hover {
+  background-position: right bottom;
+}
+
 
 .item-wrapper .prds_banner {
   background: no-repeat center top #fff;

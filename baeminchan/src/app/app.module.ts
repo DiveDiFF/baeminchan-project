@@ -27,6 +27,8 @@ import {
   ItemDetailMainComponent,
 } from './pages';
 
+import { ScrollerComponent } from './pages/scroller/scroller.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,8 @@ import {
     SigninComponent,
     SignupComponent,
     ItemDetailComponent,
-    ItemDetailMainComponent
+    ItemDetailMainComponent,
+    ScrollerComponent
   ],
   imports: [
     BrowserModule,

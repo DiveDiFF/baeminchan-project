@@ -160,13 +160,13 @@ ul.breadcrumbbox li:last-child a {
   clear: both;
 }
 
-.badge {
+.badgebox {
   display: inline-block;
   zoom: 1;
   min-width: 52px;
   height: 11px;
   margin: 0 3px 0 0;
-  padding: 7px 0 4px;
+  padding: 7px 4px 4px;
   line-height: 11px;
   text-align: center;
   font-size: 11px;
@@ -174,11 +174,11 @@ ul.breadcrumbbox li:last-child a {
   font-family: 'Noto Sans KR', Dotum, "Nanum", sans-serif;
 }
 
-.badge.launching {
+.badgebox.launching {
   background: #c6a8a5;
 }
 
-.ua-chrome div.badge, .ua-safari div.badge, .ua-firefox div.badge {
+.ua-chrome div.badgebox, .ua-safari div.badgebox, .ua-firefox div.badgebox {
   padding: 6px 0 5px;
 }
 

@@ -12,6 +12,7 @@ export class ItemDetailMainComponent implements OnInit {
 
   ngOnInit() {
     this.api.getItemDetail(this.api.itemdetailId);
+    console.log(this.api.productItemDetail);
   }
 
   parentCategory(engName: string) {

@@ -27,7 +27,7 @@
           </a>
       </ul>
       <h3 class="tlt_cate_h3">{{ api.nowActiveMenu }}</h3>
-      <ul id="products" class="prds_lst col4">
+      <ul id="products" class="prds_lst col4" *ngIf="api.productItemLists">
         <li *ngFor="let productItemList of api.productItemLists">
           <div class="imgthumb">
             <img src="{{ productItemList.thumbnail_url }}" alt="">
@@ -79,16 +79,8 @@
         </li>
       </ul>
       <!-- Page Pagination-->
-      <div class="pagination">
-        <a class="btn-paging prev" [style.display]="currentPage === 1 ? 'none' : 'inline-block'">이전 페이지</a>
-        [style.background-color]="isActive ? '#4CAF50' : '#f44336'"
-        <span class="num" *ngFor="let page of pages">
-          <a [class.current]="currentPage === page"
-              (click)="currentPage = page">{{ page }}</a>
-        </span>
-        <a class="btn-paging next">다음 페이지</a>
-      </div>
-      <pre>{{ api.productItemLists | json }}</pre>
+      <a class="btn_more" (click)="api.getNextList()"><span>메뉴 더보기</span></a>
+      <!-- <pre>{{ api.productItemLists | json }}</pre> -->
       <div class="b2b-banner">
         <h3>단체주문이 필요하세요?</h3>
         <a href="/content/corporate.php">온라인 주문</a>

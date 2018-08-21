@@ -10,31 +10,29 @@
       <div class="bx-wrapper">
         <div class="bx-viewport">
           <ul id="sidedish" class="sidedish-list prd-list" [ngStyle]="{ 'transform': thumbChange(), 'transition-duration': thumbChangeDuration() }">
-            <!-- 밑반찬 아이템 1-->
-            <li class="sidedish-item prd-item" *ngFor="let item of rotateItems">
+            <!-- 아이템 1-->
+            <li class="sidedish-item prd-item" *ngFor="let item of api.rotateItems">
               <a [href]="item.url">
                 <div class="thumb-img">
-                  <img [src]="item.img" alt="" srcset="">
+                  <img [src]="item.thumbnail_url" alt="item.raw_name">
                 </div>
                 <dl>
-                  <dt class="sidedish-title prd-item-title">{{ item.title }}</dt>
+                  <dt class="sidedish-title prd-item-title">{{ item.raw_name }}</dt>
                   <dd class="sidedish-description prd-item-des">{{ item.description }}</dd>
-                  <dd class="star-rating-box">
+                  <dd class="star-rating-box" *ngIf="item.score">
                     <span class="star-score-bg">
                       <span class="star-score" [ngStyle]="{ 'width.%': api.starScoreStyle(item.score) }">{{ item.score }}</span>
                     </span>
-                    <span class="review-count">{{ item.reviewcount}}</span>
+                    <span class="review-count" *ngIf="item.reviewcount">{{ item.reviewcount }}</span>
                   </dd>
                   <dd class="prd-price">
-                    <p class="selling-price">{{ item.price }}
-                      <span class="unit">원</span>
-                    </p>
-                    <p class="origin-price">
-                      <del>7,300</del>
+                    <p class="selling-price">{{ item.sale_price | currency:'KRW':'symbol':'1.0' }}<span class="unit">원</span></p>
+                    <p class="origin-price" *ngIf="item.price">
+                      <del>{{ item.price | currency:'KRW':'symbol':'1.0' }}</del>
                     </p>
                   </dd>
                 </dl>
-                <div class="badge-area">
+                <div class="badge-area" *ngIf="item.price">
                   <div class="badge event">
                     <span>이벤트특가</span>
                   </div>
@@ -59,4 +57,5 @@
         소중한식사 </a>
     </p>
   </div>
+  <!-- <pre>{{ api.slideListItems | json }}</pre> -->
 </main>

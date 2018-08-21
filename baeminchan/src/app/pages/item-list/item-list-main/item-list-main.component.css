@@ -356,70 +356,20 @@ ul.prds_lst li:nth-child(4n) {
   margin-right: 0;
 }
 
-.pagination {
-  position: relative;
-  margin: 0px auto 30px;
-  width: 100%;
+.btn_more {
+  display: block;
+  margin: 38px auto 50px;
+  padding: 17px 0 15px;
+  width: 958px;
   text-align: center;
-  font-size: 0;
-  line-height: 0;
+  font-size: 16px;
+  color: #444;
+  border: 1px solid #d7d7d7;
 }
 
-.pagination .num {
-  margin: 0 5px;
-  vertical-align: middle;
-}
-
-.pagination .num a {
-  display: inline-block;
-  margin: 0 1px;
-  padding-top: 5px;
-  width: 28px;
-  height: 23px;
-  vertical-align: middle;
-  color: #888;
-  font-size: 13px;
-  line-height: 1.3;
-  border: 1px solid #fff;
-}
-
-.pagination .num a.current {
-  color: #0fbfb9;
-  font-weight: bold;
-  border-color: #e1e1e1;
-}
-
-.btn-paging {
-  overflow: hidden;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  vertical-align: middle;
-  font-size: 0;
-  line-height: 0;
-  background: url("http://cdn.bmf.kr/web/common/sp_btn_paging.png") no-repeat;
-}
-
-.pagination .num a:hover {
-  color: #0fbfb9;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.btn-paging.prev {
-  background-position: 11px 10px;
-}
-
-.btn-paging.prev:hover {
-  background-position: 11px -72px;
-}
-
-.btn-paging.next {
-  background-position: -25px 10px;
-}
-
-.btn-paging.next:hover {
-  background-position: -25px -72px;
+.btn_more:focus {
+  color: #000;
+  border-color: #b4b4b4;
 }
 
 .b2b-banner {
