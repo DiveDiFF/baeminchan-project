@@ -115,7 +115,7 @@ ul, menu, dir {
   -webkit-margin-after: 1em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
-  -webkit-padding-start: 40px;
+  /* -webkit-padding-start: 40px; */
 }
 
 ol, ul, dl {
@@ -135,11 +135,11 @@ label {
 }
 
 .input {
-  height: 34px;
-  padding: 0 7px;
-  background: #fff;
-  border: 1px solid #e1e1e1;
-  font-size: 13px;
+  /* height: 34px; */
+  /* padding: 0 7px; */
+  /* background: #fff; */
+  /* border: 1px solid #e1e1e1; */
+  /* font-size: 13px; */
   font-weight: bold;
   color: #444;
   outline: 0;
@@ -148,7 +148,7 @@ label {
 
 .login-box ul li .input {
   display: block;
-  width: 418px;
+  width: 450px;
   height: 54px;
   padding: 0 15px;
   background: #fff;

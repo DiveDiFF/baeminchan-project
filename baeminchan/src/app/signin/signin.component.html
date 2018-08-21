@@ -10,7 +10,7 @@
                       <ul>
                           <li>
                               <label for="member_id" style="display: inline;"></label>
-                              <input name="userid" class="form-control input" formControlName="userid" type="text" value="" placeholder="아이디(이메일)" style="ime-mode:inactive">
+                              <input name="userid" class="form-control input" formControlName="username" type="text" value="" placeholder="아이디(이메일)" style="ime-mode:inactive">
                           </li>
                           <li>
                               <label for="pwd"></label>
@@ -19,7 +19,7 @@
                           </li>
                       </ul>
                     </div>
-                    <button class="btn btn_mint btn_login" (mousedown)="validate()"><span>로그인</span></button>
+                    <button class="btn btn_mint btn_login" (click)="validate()"><span>로그인</span></button>
                     <!-- (keyup)="alert()" (mousedown)="alert()" *ngIf="userid?.errors.pattern" -->
                     <!-- checkbox -->
                     <span class="custom_checkbox">

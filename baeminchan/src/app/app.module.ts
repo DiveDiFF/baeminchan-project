@@ -11,6 +11,10 @@ import { SigninComponent } from './signin/signin.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ClickOutSideDirective } from './signup/click-outside.directive';
+
 
 @NgModule({
   declarations: [
@@ -21,11 +25,15 @@ import { SignupComponent } from './signup/signup.component';
     FooterComponent,
     ContainerComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    ClickOutSideDirective,
+
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
