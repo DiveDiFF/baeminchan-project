@@ -8,6 +8,9 @@ export * from './header/header-header/header-header.component';
 export * from './main/main-slides/main-slides.component';
 export * from './main/main-item1/main-item1.component';
 export * from './main/main-item2/main-item2.component';
+export * from './main/main-item3/main-item3.component';
+export * from './main/main-item4/main-item4.component';
+export * from './main/main-item5/main-item5.component';
 export * from './main/main-footer/main-footer.component';
 export * from './basket-popup/basket-popup.component';
 export * from './item-list/item-list.component';
@@ -16,3 +19,5 @@ export * from './signin/signin.component';
 export * from './signup/signup.component';
 export * from './item-detail/item-detail.component';
 export * from './item-detail/item-detail-main/item-detail-main.component';
+export * from './cart/cart.component';
+

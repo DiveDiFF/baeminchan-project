@@ -49,6 +49,7 @@ ul.breadcrumbbox li:first-child a {
 ul.breadcrumbbox li:last-child a {
   color: #333;
   font-family: NanumBold, sans-serif;
+  font-weight: bold;
 }
 
 
@@ -78,12 +79,18 @@ ul.choice_category_lst li a {
   display: block;
   text-align: center;
   font-family: "Noto Sans KR Bold", sans-serif;
+  font-weight: bold;
   font-size: 16px;
   color: #888;
 }
 
+ul.choice_category_lst li a span {
+  font-weight: bold;
+}
+
 h3.tlt_cate_h3 {
   font-family: "Noto Sans KR Bold", sans-serif;
+  font-weight: bold;
   font-size: 26px;
   color: #333;
   text-align: center;
@@ -149,6 +156,7 @@ ul.prds_lst li .imgthumb a {
 
 .thumb_badge {
   font-family: "Noto Sans KR Bold", sans-serif;
+  font-weight: bold;
   letter-spacing: -0.03em;
   position: absolute;
   width: 68px;
@@ -192,6 +200,10 @@ ul.prds_lst li .prds_lst_info .prd_tlt a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+ul.prds_lst li .prds_lst_info .prd_tlt a span {
+  font-weight: bold;
 }
 
 ul.prds_lst li .prds_lst_info .star-rating-box {
@@ -325,6 +337,7 @@ button, .btn {
   display: inline-block;
   zoom: 1;
   font-family: "Noto Sans KR Bold", "Nanum Gothic", sans-serif;
+  font-weight: bolder;
   font-size: 14px;
   cursor: pointer;
   border: none;
@@ -335,6 +348,10 @@ button, .btn {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+}
+
+button, .btn:hover {
+  background: #807a71;
 }
 
 .btn_gray {
@@ -409,6 +426,7 @@ ul.prds_lst li:nth-child(4n) {
   padding: 10px 10px 8px;
   margin-bottom: 10px;
   font-family: "Noto Sans KR Bold", sans-serif;
+  font-weight: bold;
   font-size: 20px;
   color: #fff;
   text-align: center;
@@ -422,4 +440,5 @@ ul.prds_lst li:nth-child(4n) {
 
 .b2b-banner p strong {
   font-family: "Noto Sans KR Bold", sans-serif;
+  font-weight: bold;
 }

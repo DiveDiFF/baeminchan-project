@@ -84,6 +84,13 @@
   background: none;
 }
 
+.member-menu-item a .cart_num {
+  padding-left: 1px;
+  color: #11c2bc;
+  font-weight: bold;
+}
+
+
 .util-cart a {
   padding-right: 0;
   color: #333;

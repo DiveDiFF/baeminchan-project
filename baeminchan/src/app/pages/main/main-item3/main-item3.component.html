@@ -2,15 +2,15 @@
     <h2 class="hidden">메뉴 리스트</h2>
     <div class="prd-wrapper">
       <div class="mtlt">
-        <h3>메인반찬</h3>
-        <p>담기만 하면 완성되는 메인반찬</p>
+        <h3>국ㆍ찌개</h3>
+        <p>김이 모락모락 국,찌개</p>
       </div>
       <div class="prds-thumb-slides-wrap">
         <div class="bx-wrapper">
           <div class="bx-viewport">
             <ul id="sidedish" class="sidedish-list prd-list" [ngStyle]="{ 'transform': thumbChange(), 'transition-duration': thumbChangeDuration() }">
               <!-- 아이템 1-->
-              <li class="sidedish-item prd-item" *ngFor="let item of api.slideListItems2">
+              <li class="sidedish-item prd-item" *ngFor="let item of api.slideListItems3">
                 <a [href]="item.url">
                   <div class="thumb-img">
                     <img [src]="item.thumbnail_url1" alt="item.raw_name">
@@ -43,16 +43,16 @@
         </div>
       </div>
       <a class="btn-more">
-        <span>메인반찬 전체보기</span>
+        <span>국ㆍ찌개 전체보기</span>
       </a>
     </div>
     <div class="slides-item-navi">
       <a href="javascript:void(0);" class="slides-prev" title="이전" (click)="thumbSlidePrev()">이전</a>
       <a href="javascript:void(0);" class="slides-next" title="다음" (click)="thumbSlideNext()">다음</a>
     </div>
-    <div class="prds_banner g2" style="background-image:url(https://cdn.bmf.kr/banner/main_event/170425/1493082744401_ba9831e4e2bb.png); background-color:#dad8d3;">
+    <div class="prds_banner g2" style="background-image:url(https://cdn.bmf.kr/banner/main_event/171214/1513243754333_8a0018a0575a.jpg); background-color:#dad8d3;">
       <p>
-        <a>쉐프찬</a>
+        <a>연구소</a>
       </p>
     </div>
     <!-- <pre>{{ api.slideListItems | json }}</pre> -->

@@ -13,11 +13,13 @@ export class ItemDetailMainComponent implements OnInit {
   foldingTitle1 = '접어두기';
   foldingTitle2 = '접어두기';
   foldingTitle3 = '접어두기';
+  hoverImg = 0;
   constructor(public api: ProductApiService) { }
 
   ngOnInit() {
     this.api.getItemDetail(this.api.itemdetailId);
     console.log(this.api.productItemDetail);
+    this.api.totalQuantity = 1;
   }
 
   parentCategory(engName: string) {

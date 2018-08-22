@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ProductApiService } from '../../../module/product-api.service';
 
 @Component({
-  selector: 'app-main-item2',
-  templateUrl: './main-item2.component.html',
-  styleUrls: ['./main-item2.component.css']
+  selector: 'app-main-item5',
+  templateUrl: './main-item5.component.html',
+  styleUrls: ['./main-item5.component.css']
 })
-export class MainItem2Component implements OnInit {
+export class MainItem5Component implements OnInit {
   changePage = false;
 
   translateWidth = -980;

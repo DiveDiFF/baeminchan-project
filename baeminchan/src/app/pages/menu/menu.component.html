@@ -9,7 +9,7 @@
         [routerLinkActiveOptions]="{ exact: true }"><span class="menu-item-title">밑반찬</span></a>
         <ul class="sub-menu" [class.active]="'menu1' === focusedMenu">
           <li *ngFor="let sub of subMenu1" [id]="sub">
-            <a><span>{{sub}}</span></a>
+            <a routerLink="/itemlist" (click)="api.nowActiveMenu = sub"><span>{{sub}}</span></a>
           </li>
         </ul>
       </li>

@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { ProductApiService } from '../../module/product-api.service';
 
 @Component({
   selector: 'app-basket-popup',
@@ -8,7 +9,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 export class BasketPopupComponent implements OnInit {
   scrollOn = false;
   startToFixed = 497;
-  constructor() { }
+  constructor(public api: ProductApiService) { }
 
   ngOnInit() {
   }

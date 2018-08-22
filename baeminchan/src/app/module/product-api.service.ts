@@ -8,6 +8,33 @@ interface Itemlist {
   results: object[];
 }
 
+interface Images {
+  thumbnail_url1: string;
+  thumbnail_url2: string;
+  thumbnail_url3: string;
+  thumbnail_url4: string;
+  thumbnail_url5: string;
+  thumbnail_url6: string;
+}
+
+interface CartItem {
+  pk: number;
+  product: number;
+  amount: number;
+  item_total_price: number;
+}
+
+interface SlideList {
+  id: number;
+  raw_name: string;
+  description: string;
+  price: number
+  discount_rate: number
+  sale_price: number;
+  thumbnail_url1: string;
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,9 +44,15 @@ export class ProductApiService {
   productItemDetail;
   nowActiveMenu = '전체보기';
   itemdetailId: number;
-  slideListItems;
-  rotateItems = [];
+  slideListItems: SlideList[];
+  slideListItems2: SlideList[];
+  slideListItems3: SlideList[];
+  slideListItems4: SlideList[];
+  slideListItems5: SlideList[];
   itemlistNextURL = '';
+  itemDetailImages = [];
+  totalQuantity = 1;
+  cartItemList: CartItem[] = [];
 
 
   constructor(private http: HttpClient) {
@@ -46,45 +79,91 @@ export class ProductApiService {
   }
 
   getItemDetail(itemID) {
-    this.http.get('https://server.yeojin.me/api/products/' + itemID + '/')
-    .subscribe(itemdetail => this.productItemDetail = itemdetail);
+    this.http.get<Images>('https://server.yeojin.me/api/products/' + itemID + '/')
+    .subscribe(itemdetail => {
+      this.productItemDetail = itemdetail;
+      this.itemDetailImages = [
+        itemdetail.thumbnail_url1,
+        itemdetail.thumbnail_url2,
+        itemdetail.thumbnail_url3,
+        itemdetail.thumbnail_url4,
+        itemdetail.thumbnail_url5,
+        itemdetail.thumbnail_url6
+      ];
+
+    });
     this.itemdetailId = itemID;
     console.log(itemID);
   }
 
   getSlideList() {
-    this.http.get('https://server.yeojin.me/api/products/random/')
+    this.http.get<SlideList[]>('https://server.yeojin.me/api/products/random/')
     .subscribe(randomslidelist => {
-      this.slideListItems = randomslidelist;
-      this.imageRotate(this.slideListItems);
+      // this.slideListItems = randomslidelist.slice(0, 12);
+      // this.slideListItems = randomslidelist;
+      this.slideListItems = this.imageRotate(randomslidelist.slice(0, 12));
+      this.slideListItems2 = this.imageRotate(randomslidelist.slice(24, 36));
+      this.slideListItems3 = this.imageRotate(randomslidelist.slice(12, 24));
+      this.slideListItems4 = this.imageRotate(randomslidelist.slice(72, 84));
+      this.slideListItems5 = this.imageRotate(randomslidelist.slice(60, 72));
+
     });
   }
 
   imageRotate(arr) {
-    this.rotateItems = [...arr.slice(-4), ...arr, ...arr.slice(0, 4)];
+    return [...arr.slice(-4), ...arr, ...arr.slice(0, 4)];
   }
 
   starScoreStyle(score: string) {
     switch (score) {
-      case '5점 만점에 5점':
+      case '5':
         return 100;
-      case '5점 만점에 4.5점':
+      case '4.5':
         return 90;
-      case '5점 만점에 4점':
+      case '4':
         return 80;
-      case '5점 만점에 3.5점':
+      case '3.5':
         return 70;
-      case '5점 만점에 3점':
+      case '3':
         return 60;
-      case '5점 만점에 2.5점':
+      case '2.5':
         return 50;
-      case '5점 만점에 2점':
+      case '2':
         return 40;
-      case '5점 만점에 1.5점':
+      case '1.5':
         return 30;
-      case '5점 만점에 1점':
+      case '1':
         return 20;
-      default: return 0;
+      default: return 60;
     }
+  }
+
+  itemPlus(target: any) {
+    if (isNaN(+target.value)) { return target.value = '1'; }
+    console.log('[plus]', target.value);
+    target.value = +target.value + 1;
+    this.totalQuantity = target.value;
+  }
+
+  itemMinus(target: any) {
+    if (isNaN(+target.value) || +target.value <= 1 ) { return target.value = '1'; }
+    console.log('[minus]', target.value);
+    target.value = +target.value - 1;
+    this.totalQuantity = target.value;
+  }
+
+  getNextPk() {
+    return this.cartItemList.length ? Math.max(...this.cartItemList.map(cartItem => cartItem.pk)) + 1 : 1;
+  }
+
+  pushCart(amount: number, pk: number, price: number) {
+    this.cartItemList = [...this.cartItemList, { pk: this.getNextPk(), product: pk, amount: +amount, item_total_price: price } ];
+    console.log(amount, pk, this.cartItemList);
+    this.http.post<CartItem[]>('https://server.yeojin.me/api/carts/cartitemlist/', this.cartItemList )
+    .subscribe( () => console.log(this.cartItemList) );
+  }
+
+  getCartList() {
+    this.http.get()
   }
 }

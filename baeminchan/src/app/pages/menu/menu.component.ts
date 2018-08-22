@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductApiService } from '../../module/product-api.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class MenuComponent implements OnInit {
   subMenu8: string[];
   focusedMenu = '';
 
-  constructor() { }
+  constructor( public api: ProductApiService ) { }
 
   ngOnInit() {
     this.subMenu1 = ['무침', '나물무침', '볶음', '조림', '김치', '전', '장아찌·피클', '젓갈·장·소스', '세트'];

@@ -11,28 +11,28 @@
         <div class="bx-viewport">
           <ul id="sidedish" class="sidedish-list prd-list" [ngStyle]="{ 'transform': thumbChange(), 'transition-duration': thumbChangeDuration() }">
             <!-- 아이템 1-->
-            <li class="sidedish-item prd-item" *ngFor="let item of api.rotateItems">
+            <li class="sidedish-item prd-item" *ngFor="let item of api.slideListItems">
               <a [href]="item.url">
                 <div class="thumb-img">
-                  <img [src]="item.thumbnail_url" alt="item.raw_name">
+                  <img [src]="item.thumbnail_url1" alt="item.raw_name">
                 </div>
                 <dl>
                   <dt class="sidedish-title prd-item-title">{{ item.raw_name }}</dt>
                   <dd class="sidedish-description prd-item-des">{{ item.description }}</dd>
-                  <dd class="star-rating-box" *ngIf="item.score">
+                  <dd class="star-rating-box">
                     <span class="star-score-bg">
-                      <span class="star-score" [ngStyle]="{ 'width.%': api.starScoreStyle(item.score) }">{{ item.score }}</span>
+                      <span class="star-score" [ngStyle]="{ 'width.%': api.starScoreStyle(item.avg_rating) }">{{ item.avg_rating }}</span>
                     </span>
-                    <span class="review-count" *ngIf="item.reviewcount">{{ item.reviewcount }}</span>
+                    <span class="review-count">{{ item.comment_count }}</span>
                   </dd>
                   <dd class="prd-price">
-                    <p class="selling-price">{{ item.sale_price | currency:'KRW':'symbol':'1.0' }}<span class="unit">원</span></p>
+                    <p class="selling-price">{{ item.sale_price | currency }}<span class="unit">원</span></p>
                     <p class="origin-price" *ngIf="item.price">
-                      <del>{{ item.price | currency:'KRW':'symbol':'1.0' }}</del>
+                      <del>{{ item.price | currency }}</del>
                     </p>
                   </dd>
                 </dl>
-                <div class="badge-area" *ngIf="item.price">
+                <div class="badge-area" *ngIf="item.discount_rate !== 0">
                   <div class="badge event">
                     <span>이벤트특가</span>
                   </div>

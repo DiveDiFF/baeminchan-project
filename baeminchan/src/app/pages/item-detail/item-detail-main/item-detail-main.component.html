@@ -13,7 +13,7 @@
       <div class="product_detail_top clearfix">
         <div class="detail_top_image">
           <div class="image_top">
-            <img [src]="api.productItemDetail.thumbnail_url" alt="" class="top_detail_image">
+            <img [src]="api.itemDetailImages[hoverImg]" alt="" class="top_detail_image">
             <i class="brd_box"></i>
             <div class="thumb_badge" *ngIf="api.productItemDetail.discount_rate">
               <span class="num">{{ api.productItemDetail.discount_rate }}</span>
@@ -21,20 +21,20 @@
             </div>
           </div>
           <div class="image_thumb">
-            <a class="top_thumb">
-              <img src="https://cdn.bmf.kr/_data/product/I6151/709efed1b5187f50bc5abea68fda5b42.jpg" alt="">
+            <a class="top_thumb" (mouseenter)="hoverImg = 1">
+              <img [src]="api.productItemDetail.thumbnail_url2" alt="">
               <i class="brd_box"></i>
             </a>
-            <a class="top_thumb">
-              <img src="https://cdn.bmf.kr/_data/product/I6151/00a29421c428181f5541529b580cedb7.jpg" alt="">
+            <a class="top_thumb" (mouseenter)="hoverImg = 2">
+              <img [src]="api.productItemDetail.thumbnail_url3" alt="">
               <i class="brd_box"></i>
             </a>
-            <a class="top_thumb">
-              <img src="https://cdn.bmf.kr/_data/product/I6151/595bbf04c497eaef71f2dc6b5dbb2df4.jpg" alt="">
+            <a class="top_thumb" (mouseenter)="hoverImg = 3">
+              <img [src]="api.productItemDetail.thumbnail_url4" alt="">
               <i class="brd_box"></i>
             </a>
-            <a class="top_thumb">
-              <img src="https://cdn.bmf.kr/_data/product/I6151/b466ee9a34c548e52d76080b0e7aed81.jpg" alt="">
+            <a class="top_thumb" (mouseenter)="hoverImg = 4">
+              <img [src]="api.productItemDetail.thumbnail_url5" alt="">
               <i class="brd_box"></i>
             </a>
             <span class="top_thumb"></span>
@@ -60,8 +60,8 @@
             </dd>
             <dt class="blind">가격</dt>
             <dd class="desc_price">
-              <del class="origin-price" *ngIf="api.productItemDetail.discount_rate">{{ api.productItemDetail.price | currency:'KRW':'symbol':'1.0' }}</del>
-              <strong class="sale-price">{{ api.productItemDetail.sale_price | currency:'KRW':'symbol':'1.0' }}
+              <del class="origin-price" *ngIf="api.productItemDetail.discount_rate">{{ api.productItemDetail.price | currency }}</del>
+              <strong class="sale-price">{{ api.productItemDetail.sale_price | currency }}
                 <span class="unit">원</span>
               </strong>
             </dd>
@@ -76,11 +76,13 @@
                     <dd>
                       <div class="prd_account fRight">
                         <label>
-                          <input data-tune-quantity-index="detail" type="text" name="amount" value="1" class="buy_cnt">
+                          <input data-tune-quantity-index="detail" #quantityInput type="text" name="amount" value="1" class="buy_cnt">
                         </label>
                         <span>
-                          <a title="수량 더하기" class="up">수량 더하기</a>
-                          <a title="수량 빼기" class="down">수량 빼기</a>
+                          <a title="수량 더하기" class="up"
+                              (click)="api.itemPlus($event.target.parentNode.previousSibling.lastChild)">수량 더하기</a>
+                          <a title="수량 빼기" class="down"
+                              (click)="api.itemMinus($event.target.parentNode.previousSibling.lastChild)">수량 빼기</a>
                         </span>
                       </div>
                     </dd>
@@ -88,11 +90,11 @@
                 </div>
                 <p class="calculated_price">
                   <span class="price_label">총 상품금액</span>
-                  <strong id="detail_total_price" class="price_number">5,850</strong>
+                  <strong id="detail_total_price" class="price_number">{{ api.productItemDetail.sale_price * api.totalQuantity | currency }}</strong>
                   <span class="unit">원</span>
                 </p>
-                <button type="button" data-tune-button-index="detail" data-tune-type="addToCartPc"
-                  class="btn btn_mint btn_into_basket purchageable" data-tune-bind="true">담기</button>
+                <button type="button" class="btn btn_mint btn_into_basket purchageable"
+                    (click)="api.pushCart(api.totalQuantity, api.itemdetailId, api.productItemDetail.sale_price*api.totalQuantity)">담기</button>
               </fieldset>
             </form>
           </div>

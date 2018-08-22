@@ -30,7 +30,7 @@
       <ul id="products" class="prds_lst col4" *ngIf="api.productItemLists">
         <li *ngFor="let productItemList of api.productItemLists">
           <div class="imgthumb">
-            <img src="{{ productItemList.thumbnail_url }}" alt="">
+            <img src="{{ productItemList.thumbnail_url1 }}" alt="">
             <a routerLink="/itemdetail"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
@@ -66,12 +66,14 @@
                     data-no="16026" data-price="" data-hash="H6566" data-min="1" data-max="-1">
                 </label>
                 <span>
-                  <a title="수량 더하기" class="up">수량 더하기</a>
-                  <a title="수량 빼기" class="down">수량 빼기</a>
+                  <a title="수량 더하기" class="up"
+                  (click)="api.itemPlus($event.target.parentNode.previousSibling.lastChild)">수량 더하기</a>
+                  <a title="수량 빼기" class="down"
+                  (click)="api.itemMinus($event.target.parentNode.previousSibling.lastChild)">수량 빼기</a>
                 </span>
               </div>
-              <button class="btn btn_gray prd_thumb_btn cart" data-role="add-to-cart-button" data-hash="H6566" data-price="8500" data-tune-type="addToCartPc"
-                data-tune-price="8500" data-tune-name="[김치의완성] 홍신애 포기김치 650g" data-tune-button-index="H6566" data-tune-bind="true">
+              <button class="btn btn_gray prd_thumb_btn cart"
+              (click)="api.pushCart(api.totalQuantity, productItemList.id , productItemList.sale_price*api.totalQuantity)">
                 <span>담기</span>
               </button>
             </dd>
@@ -79,7 +81,7 @@
         </li>
       </ul>
       <!-- Page Pagination-->
-      <a class="btn_more" (click)="api.getNextList()"><span>메뉴 더보기</span></a>
+       <a class="btn_more" *ngIf="api.itemlistNextURL !== null" (click)="api.getNextList()"><span>메뉴 더보기</span></a>
       <!-- <pre>{{ api.productItemLists | json }}</pre> -->
       <div class="b2b-banner">
         <h3>단체주문이 필요하세요?</h3>

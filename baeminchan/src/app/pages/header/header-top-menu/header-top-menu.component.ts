@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductApiService } from '../../../module/product-api.service';
 
 @Component({
   selector: 'app-header-top-menu',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderTopMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(public api: ProductApiService) { }
 
   ngOnInit() {
   }

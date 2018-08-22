@@ -33,13 +33,7 @@
   border-style: solid;
   border-color: #d6d6d6;
   background: #fff;
-}
-
-.put_in_basket .empty .txt {
-  display: block;
-  font-size: 14px;
-  color: #666;
-  padding: 35px 0 15px 0;
+  margin: 0;
 }
 
 .put_in_basket .empty .txt {
@@ -78,13 +72,14 @@
   padding: 17px 0 16px 0;
   background: #2ac1bc;
   font-family: "Noto Sans KR Bold", sans-serif;
+  font-weight: bold;
   color: #fff;
   font-size: 13px;
   line-height: 1.2;
   vertical-align: top;
 }
 
-.put_in_basket .empty .go_to_basket {
+.put_in_basket .emptyCart {
   background: #e2e2e2;
   color: #aaa;
 }

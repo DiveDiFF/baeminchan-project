@@ -17,6 +17,9 @@ import {
   MainSlidesComponent,
   MainItem1Component,
   MainItem2Component,
+  MainItem3Component,
+  MainItem4Component,
+  MainItem5Component,
   MainFooterComponent,
   BasketPopupComponent,
   ItemListComponent,
@@ -25,9 +28,11 @@ import {
   SignupComponent,
   ItemDetailComponent,
   ItemDetailMainComponent,
+  CartComponent
 } from './pages';
 
 import { ScrollerComponent } from './pages/scroller/scroller.component';
+import { CurrencyPipe } from './module/currency.pipe';
 
 @NgModule({
   declarations: [
@@ -50,7 +55,12 @@ import { ScrollerComponent } from './pages/scroller/scroller.component';
     SignupComponent,
     ItemDetailComponent,
     ItemDetailMainComponent,
-    ScrollerComponent
+    ScrollerComponent,
+    CurrencyPipe,
+    CartComponent,
+    MainItem3Component,
+    MainItem4Component,
+    MainItem5Component
   ],
   imports: [
     BrowserModule,

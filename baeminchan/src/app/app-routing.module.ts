@@ -7,7 +7,8 @@ import {
   MainComponent,
   ItemListComponent,
   SigninComponent,
-  ItemDetailComponent
+  ItemDetailComponent,
+  CartComponent
 } from './pages';
 
 // 라우트 구성
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'itemlist', component: ItemListComponent },
   { path: 'login', component: SigninComponent },
   { path: 'itemdetail', component: ItemDetailComponent },
+  { path: 'cart', component: CartComponent}
 ];
 
 @NgModule({

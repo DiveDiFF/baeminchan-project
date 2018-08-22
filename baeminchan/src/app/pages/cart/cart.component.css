@@ -1,0 +1,442 @@
+#container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.content {
+  position: relative;
+  width: 980px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#cart {
+  overflow: hidden;
+  background: #fff;
+}
+
+.content h2.cart_tlt {
+  font-size: 26px;
+  font-family: NanumEB, sans-serif;
+  font-weight: 900;
+  padding: 47px 0 6px;
+  text-align: left;
+}
+
+#cart h2 {
+  margin-bottom: 20px;
+}
+
+.tb_order_style {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  margin-bottom: 20px;
+}
+
+.tb_order_style.cart {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.tb_order_style thead {
+  border-top: 3px solid #333;
+}
+
+.tb_order_style tr {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.tb_order_style thead th {
+  font-family: "NanumBold", sans-serif;
+  font-weight: bold;
+  padding: 10px 0;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.custom_checkbox {
+  position: relative;
+  display: inline-block;
+}
+
+.custom_checkbox .chk_box {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border: 1px solid #D4D4D4;
+  margin-right: 3px;
+  overflow: hidden;
+  background: url('http://cdn.bmf.kr/web/common/custom_chk_box.png') left 15px no-repeat;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.custom_checkbox .hidden_chk {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 13px;
+  height: 13px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+input[type="checkbox"].bf {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.tb_order_style td.thumb {
+  text-align: left !important;
+}
+
+.tb_order_style td.thumb a {
+  display: inline-block;
+  width: 53px;
+  height: 53px;
+  border: 1px solid #ccc;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.tb_order_style td.thumb a img {
+  display: block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.tb_order_style td.left {
+  text-align: left !important;
+}
+
+.tb_order_style td p {
+  font-size: 12px;
+}
+
+.tb_order_style td p.title a {
+  font-size: 13px;
+  font-family: "NanumBold", sans-serif;
+  font-weight: bold;
+}
+
+.prd_account {
+  position: relative;
+  width: 67px;
+  height: 31px;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: hidden;
+  float: left;
+}
+
+.tb_order_style td .prd_account {
+  margin-right: 5px;
+}
+
+
+.tb_order_style thead th {
+  font-family: "NanumBold", sans-serif;
+  padding: 10px 0;
+  font-size: 14px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.tb_order_style tbody td {
+  padding: 18px 0;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.6em;
+  color: #444;
+  vertical-align: middle;
+}
+
+.prd_account input {
+  display: block;
+  float: left;
+  border: none;
+  width: 47px;
+  height: 31px;
+  padding: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.prd_account span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  float: left;
+  width: 19px;
+  height: 31px;
+  border-left: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.prd_account span a {
+  display: block;
+  float: left;
+  width: 19px;
+  height: 15px;
+  text-indent: -3000px;
+  background: url('http://cdn.bmf.kr/web/common/ic_acc_up_down.png') no-repeat #fff;
+}
+
+.prd_account span a.up {
+  background-position: center 4px;
+  border-bottom: 1px solid #ccc;
+}
+
+.prd_account span a.down {
+  background-position: center -7px;
+}
+
+
+
+.tb_order_style td p.soldout {
+  line-height: 1.3em;
+  margin-top: 3px;
+}
+
+.bf_red {
+  color: #f45452;
+}
+
+.tb_order_style a.ico-delete {
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: -1px auto 0;
+  overflow: hidden;
+  text-indent: -3000px;
+  background: url('http://cdn.bmf.kr/web/common/btn_option_delete.png') no-repeat 0 0;
+}
+
+button, .btn {
+  display: inline-block;
+  zoom: 1;
+  font-family: "Noto Sans KR Bold", "Nanum Gothic", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  overflow: visible;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.btn_white {
+  border: 1px solid #e1e1e1;
+  background: #fff;
+  color: #666;
+}
+
+.tb_order_style+.btn-area .btn-select-delete {
+  font-size: 13px;
+  color: #333;
+  font-family: inherit;
+  width: auto;
+  height: 33px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+p.time-out {
+  background: #f45452;
+  padding: 25px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  margin-top: -1px;
+  line-height: 1.7;
+}
+
+p.time-out strong {
+  font-family: "NanumEB", sans-serif;
+}
+
+.purchase_box {
+  overflow: hidden;
+  margin: 78px 0 80px;
+  position: relative;
+}
+
+.purchase_guide {
+  float: left;
+  width: 536px;
+  margin-right: 30px;
+}
+
+.purchase_box h3 {
+  font-size: 17px;
+  color: #333;
+  font-family: "NanumEB", sans-serif;
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+  padding-bottom: 8px;
+  margin-bottom: 0 !important;
+}
+
+#cart h3 {
+  clear: both;
+  font-size: 17px;
+  font-family: "NanumEB", sans-serif;
+  margin: 0 0 10px;
+}
+
+.purchase_guide .box {
+  padding: 30px 10px 30px 0;
+  width: 526px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.purchase_guide .box>h4 {
+  font-family: "NanumEB", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.purchase_guide .box>p {
+  margin-bottom: 18px;
+}
+
+.purchase_price {
+  float: right;
+  width: 414px;
+}
+
+.purchase_price .box {
+  background: #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
+  padding: 30px 20px 30px 30px;
+}
+
+.purchase_box dl {
+  overflow: hidden;
+  font-size: 14px;
+  color: #000;
+  padding-bottom: 14px;
+}
+
+.purchase_box dt {
+  float: left;
+  clear: both;
+  margin-bottom: 16px;
+}
+
+.purchase_box dd {
+  position: relative;
+  float: right;
+  text-align: right;
+  margin-bottom: 16px;
+  padding-right: 10px;
+}
+
+.purchase_box dd p.msg {
+  font-size: 12px;
+  color: #2ac1bc;
+  margin-top: 6px;
+}
+
+.purchase_price .total {
+  border-bottom: none;
+  margin: -3px 10px 6px 0;
+  border-top: 1px solid #e1e1e1;
+  padding: 20px 0 0;
+}
+
+.purchase_price .total dt {
+  font-size: 18px;
+  color: #333;
+  font-family: "NanumEB", sans-serif;
+  font-weight: bold;
+  margin: 16px 0 0;
+}
+
+.purchase_price .total dd {
+  color: #2ac1bc;
+  padding-right: 0;
+  margin-bottom: 0;
+}
+
+.purchase_price .total dd .number {
+  font-size: 43px;
+  font-weight: bold;
+}
+.number {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.purchase_price .total dd .won {
+  font-size: 20px;
+  font-family: "NanumBold", sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+  top: -3px;
+}
+
+.purchase_box dd p.msg.save-point {
+  color: #888;
+  margin-top: 2px;
+}
+
+.btn-area.cart {
+  margin: 0 0 100px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.btn-area.cart a {
+  display: inline-block;
+  width: 300px;
+  height: 66px;
+  margin: 0 3px;
+  font-size: 20px;
+  font-family: "NanumBold", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  line-height: 66px;
+}
+
+.btn-area.cart a.btn_white {
+  background: #fff;
+  border: 1px solid #bbb;
+  color: #777;
+}
+
+.btn-area.cart a.btn_white:hover {
+  background: #ddd;
+}
+
+.btn_mint {
+  background: #2ac1bc;
+  color: #fff;
+}
+
+.btn_mint:hover {
+  background: #169995;
+}
+
+
+
+

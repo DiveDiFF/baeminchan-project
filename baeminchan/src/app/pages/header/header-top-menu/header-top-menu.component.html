@@ -30,7 +30,9 @@
         <a>고객센터<span class="ic">&nbsp;</span></a>
       </li>
       <li class="member-menu-item util-cart">
-        <a>장바구니 <span class="cart_num"></span></a>
+        <a routerLink="/cart"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">장바구니 <span class="cart_num" *ngIf="api.cartItemList.length">{{ api.cartItemList.length }}</span></a>
       </li>
     </ul>
   </div>

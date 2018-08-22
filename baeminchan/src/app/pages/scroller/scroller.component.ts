@@ -14,7 +14,7 @@ export class ScrollerComponent {
 
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
-    console.log('[scroll]', scrollPosition, this.scrollOn);
+    // console.log('[scroll]', scrollPosition, this.scrollOn);
     this.scrollOn = scrollPosition >= this.startToFixed ? true : false;
 
   }
