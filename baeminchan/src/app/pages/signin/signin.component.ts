@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 // import { PasswordValidator } from './password-validator.component';
+import { ProductApiService } from '../../module/product-api.service';
+
+import { HttpClient, HttpHeaderResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-signin',
@@ -12,13 +15,16 @@ export class SigninComponent implements OnInit {
   userForm: FormGroup;
   errMsgNormal = true;
   errMsgFail = false;
+  apiUrl = `https://server.yeojin.me/api/users/auth-token/`;
+
+  constructor(private http: HttpClient, public api: ProductApiService) {}
 
   ngOnInit() {
     this.userForm = new FormGroup({
       // formControls: new FormGroup({})
-      userid: new FormControl('', [
+      username: new FormControl('', [
         Validators.required,
-        Validators.pattern(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/)
+        // Validators.pattern(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/)
       ]),
       password: new FormControl('', Validators.required),
       // passwordGroup: new FormGroup({
@@ -26,10 +32,11 @@ export class SigninComponent implements OnInit {
       //   confirmPassword: new FormControl('', Validators.required)
       // }, PasswordValidator.match),
     });
-    console.log(this.userForm);
+    // console.log(this.userForm);
   }
-  get userid() {
-    return this.userForm.get('userid');
+
+  get username() {
+    return this.userForm.get('username');
 }
 //   get passwordGroup() {
 //     return this.userForm.get('passwordGroup');
@@ -48,8 +55,15 @@ export class SigninComponent implements OnInit {
     this.userForm.reset();
 }
   validate() {
-    this.userForm.status === 'INVALID' ? alert('아이디를 입력하세요') : null ;
-    this.errMsgNormal = !this.errMsgNormal;
-    this.errMsgFail = !this.errMsgFail;
+    this.userForm.status === 'INVALID' ? alert('아이디를 입력하세요') : '' ;
+    this.errMsgNormal = !this.errMsgNormal;  // 수정필요
+    this.errMsgFail = !this.errMsgFail;  // 수정필요
+    this.http.post(this.apiUrl, this.userForm.value)
+    .subscribe( resp => {
+      localStorage.setItem('Token', resp.token)
+      const tokenSend = localStorage.getItem('Token');
+    this.api.userToken = tokenSend;
+    console.log(this.api.userToken);
+    });
   }
 }

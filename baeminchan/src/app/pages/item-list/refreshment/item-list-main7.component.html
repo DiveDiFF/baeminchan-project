@@ -1,0 +1,93 @@
+<div id="container">
+  <div class="sub_visual_banner best" style="height: 270px; background: url(https://cdn.bmf.kr/_data/files/category/category_30010000/9a798785d8e2ceb31c664cb2b949f4bc.jpg) no-repeat center top; text-indent: -3000px;">
+    <h2>간식</h2>
+    <p></p>
+  </div>
+
+  <div class="wrap">
+    <div class="content">
+
+      <ul class="breadcrumbbox list">
+        <li>
+          <a routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">홈</a>
+        </li>
+        <li>
+          <a routerLink="/itemlist/refreshment"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">간식</a>
+        </li>
+      </ul>
+
+      <ul class="choice_category_lst" *ngIf="api.listSortItems7">
+        <li ga-category="PC-listCategory,side-dish,전체보기" *ngFor="let listSortItem of api.listSortItems7">
+          <a (click)="api.getItemList('refreshment', listSortItem)" [class.now]="api.nowActiveMenu === listSortItem">
+            <span>{{ listSortItem }}</span>
+          </a>
+      </ul>
+      <h3 class="tlt_cate_h3">{{ api.nowActiveMenu }}</h3>
+      <ul id="products" class="prds_lst col4" *ngIf="api.productItemLists">
+        <li *ngFor="let productItemList of api.productItemLists">
+          <div class="imgthumb">
+            <img src="{{ productItemList.thumbnail_url1 }}" alt="">
+            <a [routerLink]="['/itemdetail', productItemList.id]"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <div class="thumb_badge" *ngIf="productItemList.discount_rate"><span class="num">{{ productItemList.discount_rate }}</span><span class="unit">%</span></div>
+            </a>
+          </div>
+          <dl class="prds_lst_info">
+            <dt class="prd_tlt">
+              <a [routerLink]="['/itemdetail', productItemList.id]"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <span>{{ productItemList.raw_name }}</span>
+              </a>
+            </dt>
+            <dd class="star-rating-box">
+              <span class="star-score-bg">
+                <span class="star-score" [ngStyle]="{ 'width.%': api.starScoreStyle(productItemList.avg_rating) }">{{ productItemList.avg_rating }}</span>
+              </span>
+              <span class="review-count">{{ productItemList.comment_count }}</span>
+            </dd>
+            <dd class="prd_thumb_price">
+              <p class="selling-price">{{ productItemList.sale_price | currency }}<span class="won">원</span>
+              </p>
+              <p class="origin-price" *ngIf="productItemList.discount_rate">
+                <del>{{ productItemList.price | currency }}원</del>
+              </p>
+            </dd>
+            <dd class="prd_to_basket">
+              <div class="prd_account clearfix">
+                <label>
+                  <input class="buy_cnt" type="text" data-tune-quantity-index="H6566" name="amount" value="1" data-name="[김치의완성] 홍신애 포기김치 650g"
+                    data-no="16026" data-price="" data-hash="H6566" data-min="1" data-max="-1">
+                </label>
+                <span>
+                  <a title="수량 더하기" class="up"
+                  (click)="api.itemPlus($event.target.parentNode.previousSibling.lastChild)">수량 더하기</a>
+                  <a title="수량 빼기" class="down"
+                  (click)="api.itemMinus($event.target.parentNode.previousSibling.lastChild)">수량 빼기</a>
+                </span>
+              </div>
+              <button class="btn btn_gray prd_thumb_btn cart"
+              (click)="api.pushCart(api.totalQuantity, productItemList.id , productItemList.sale_price*api.totalQuantity)">
+                <span>담기</span>
+              </button>
+            </dd>
+          </dl>
+        </li>
+      </ul>
+      <!-- Page Pagination-->
+       <a class="btn_more" *ngIf="api.itemlistNextURL !== null" (click)="api.getNextList()"><span>메뉴 더보기</span></a>
+      <!-- <pre>{{ api.productItemLists | json }}</pre> -->
+      <div class="b2b-banner">
+        <h3>단체주문이 필요하세요?</h3>
+        <a href="/content/corporate.php">온라인 주문</a>
+        <p>전화문의는
+          <strong>Tel. 1899-2468</strong>로 연락주세요.</p>
+      </div>
+    </div>
+  </div>
+</div>

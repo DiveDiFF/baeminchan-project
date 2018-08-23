@@ -111,11 +111,11 @@ button, input {
 ul, menu, dir {
   display: block;
   list-style-type: disc;
-  -webkit-margin-before: 1em;
+  /* -webkit-margin-before: 1em;
   -webkit-margin-after: 1em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
-  -webkit-padding-start: 40px;
+  -webkit-padding-start: 40px; */
 }
 
 ol, ul, dl {
@@ -135,11 +135,11 @@ label {
 }
 
 .input {
-  height: 34px;
-  padding: 0 7px;
-  background: #fff;
-  border: 1px solid #e1e1e1;
-  font-size: 13px;
+  /* height: 34px; */
+  /* padding: 0 7px; */
+  /* background: #fff; */
+  /* border: 1px solid #e1e1e1; */
+  /* font-size: 13px; */
   font-weight: bold;
   color: #444;
   outline: 0;
@@ -217,7 +217,7 @@ i, em, address {
   border: 1px solid #D4D4D4;
   margin-right: 3px;
   overflow: hidden;
-  background: url("http://cdn.bmf.kr/web/common/custom_chk_box.png") left 15px no-repeat;
+  background: url(https://cdn.bmf.kr/web/common/custom_chk_box.png) left 15px no-repeat;
   vertical-align: middle;
   cursor: pointer;
 }
@@ -322,7 +322,7 @@ button, .btn {
 .btn_kakao span.ic {
   width: 22px;
   height: 20px;
-  background: url("http://cdn.bmf.kr/web/common/ic_btn_kakao.png") no-repeat center center;
+  background: url(https://cdn.bmf.kr/web/common/ic_btn_kakao.png) no-repeat center center;
   margin: 0 10px 0 0;
   position: relative;
   top: 2px;

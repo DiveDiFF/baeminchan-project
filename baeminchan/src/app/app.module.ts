@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -24,15 +24,24 @@ import {
   BasketPopupComponent,
   ItemListComponent,
   ItemListMainComponent,
+  ItemListMain2Component,
+  ItemListMain3Component,
+  ItemListMain4Component,
+  ItemListMain5Component,
+  ItemListMain6Component,
+  ItemListMain7Component,
   SigninComponent,
   SignupComponent,
   ItemDetailComponent,
   ItemDetailMainComponent,
-  CartComponent
+  CartComponent,
+  SearchComponent
 } from './pages';
 
 import { ScrollerComponent } from './pages/scroller/scroller.component';
 import { CurrencyPipe } from './module/currency.pipe';
+import { ClickOutSideDirective } from './pages/signup/click-outside.directive';
+
 
 @NgModule({
   declarations: [
@@ -51,6 +60,12 @@ import { CurrencyPipe } from './module/currency.pipe';
     BasketPopupComponent,
     ItemListComponent,
     ItemListMainComponent,
+    ItemListMain2Component,
+    ItemListMain3Component,
+    ItemListMain4Component,
+    ItemListMain5Component,
+    ItemListMain6Component,
+    ItemListMain7Component,
     SigninComponent,
     SignupComponent,
     ItemDetailComponent,
@@ -60,13 +75,16 @@ import { CurrencyPipe } from './module/currency.pipe';
     CartComponent,
     MainItem3Component,
     MainItem4Component,
-    MainItem5Component
+    MainItem5Component,
+    SearchComponent,
+    ClickOutSideDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

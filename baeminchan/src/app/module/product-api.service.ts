@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 interface Itemlist {
   count: number;
@@ -28,10 +28,17 @@ interface SlideList {
   id: number;
   raw_name: string;
   description: string;
-  price: number
-  discount_rate: number
+  price: number;
+  discount_rate: number;
   sale_price: number;
   thumbnail_url1: string;
+}
+
+interface GetCartItem {
+  pk: number;
+  product: object[];
+  amount: number;
+  item_total_price: number
 }
 
 
@@ -40,10 +47,15 @@ interface SlideList {
 })
 export class ProductApiService {
   listSortItems = [];
+  listSortItems2 = [];
+  listSortItems3 = [];
+  listSortItems4 = [];
+  listSortItems5 = [];
+  listSortItems6 = [];
+  listSortItems7 = [];
   productItemLists;
   productItemDetail;
   nowActiveMenu = '전체보기';
-  itemdetailId: number;
   slideListItems: SlideList[];
   slideListItems2: SlideList[];
   slideListItems3: SlideList[];
@@ -53,15 +65,27 @@ export class ProductApiService {
   itemDetailImages = [];
   totalQuantity = 1;
   cartItemList: CartItem[] = [];
+  searchTarget = '';
+  searchItemLists: SlideList[] = [] ;
+  userToken: string;
+  parentmenu: string;
+  getCartItemLists: GetCartItem[] = [];
 
 
   constructor(private http: HttpClient) {
     this.listSortItems = ['전체보기', '무침', '나물무침', '볶음', '조림', '김치', '전', '장아찌·피클', '젓갈·장·소스', '세트' ];
+    this.listSortItems2 = ['전체보기', '국', '찌개', '탕', '전골', '세트'];
+    this.listSortItems3 = ['전체보기', '고기반찬', '해산물반찬', '생선반찬', '덮밥', '튀김', '면', '양식', '아시아식', '분식', '죽', '세트'];
+    this.listSortItems4 = ['전체보기', '이유식 초기/중기', '이유식 후기/완료기', '아이반찬', '어린이반찬', '간식·음료'];
+    this.listSortItems5 = ['전체보기', '1~2인', '3~4인', '아이반찬'];
+    this.listSortItems6 = ['전체보기', '간편반찬', '간편국찌개', '간편식품'];
+    this.listSortItems7 = ['전체보기', '베이커리', '과일', '주스', '스무디', '유제품ㆍ커피', '기타간식'];
+
   }
 
-  getItemList(listSortItem) {
+  getItemList(parentmenu, listSortItem) {
     this.nowActiveMenu = listSortItem;
-    this.http.get<Itemlist>('https://server.yeojin.me/api/products/?parent_category=side-dish&category=' + this.nowActiveMenu)
+    this.http.get<Itemlist>('https://server.yeojin.me/api/products/?parent_category=' + this.parentmenu + '&category=' + this.nowActiveMenu)
     .subscribe(itemlist => {
       this.productItemLists = itemlist.results;
       this.itemlistNextURL = itemlist.next;
@@ -90,9 +114,7 @@ export class ProductApiService {
         itemdetail.thumbnail_url5,
         itemdetail.thumbnail_url6
       ];
-
     });
-    this.itemdetailId = itemID;
     console.log(itemID);
   }
 
@@ -114,27 +136,27 @@ export class ProductApiService {
     return [...arr.slice(-4), ...arr, ...arr.slice(0, 4)];
   }
 
-  starScoreStyle(score: string) {
+  starScoreStyle(score: number) {
     switch (score) {
-      case '5':
+      case 5:
         return 100;
-      case '4.5':
+      case 4.5:
         return 90;
-      case '4':
+      case 4:
         return 80;
-      case '3.5':
+      case 3.5:
         return 70;
-      case '3':
+      case 3:
         return 60;
-      case '2.5':
+      case 2.5:
         return 50;
-      case '2':
+      case 2:
         return 40;
-      case '1.5':
+      case 1.5:
         return 30;
-      case '1':
+      case 1:
         return 20;
-      default: return 60;
+      default: return 0;
     }
   }
 
@@ -157,13 +179,91 @@ export class ProductApiService {
   }
 
   pushCart(amount: number, pk: number, price: number) {
-    this.cartItemList = [...this.cartItemList, { pk: this.getNextPk(), product: pk, amount: +amount, item_total_price: price } ];
-    console.log(amount, pk, this.cartItemList);
-    this.http.post<CartItem[]>('https://server.yeojin.me/api/carts/cartitemlist/', this.cartItemList )
-    .subscribe( () => console.log(this.cartItemList) );
+    const cartItem = { pk: this.getNextPk(), product: pk, amount: +amount, item_total_price: price };
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': `token ${this.userToken}`
+      })
+    };
+    console.log(this.userToken);
+    this.http.post<CartItem>('https://server.yeojin.me/api/carts/cartitemlist/', cartItem, httpOptions)
+    .subscribe( () => {
+      this.cartItemList = [...this.cartItemList, cartItem];
+      console.log('[pushcart]', cartItem);
+    });
   }
 
-  getCartList() {
-    this.http.get()
+  getCartItem() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': `token ${this.userToken}`
+      })
+    };
+    this.http.get<GetCartItem>('https://server.yeojin.me/api/carts/cartitemlist/', httpOptions)
+    .subscribe( itemList => {
+      console.log('[get]', this.userToken, itemList);
+      this.getCartItemLists = itemList;
+    });
   }
+
+  searchItemList(target) {
+    this.http.get<SlideList[]>('https://server.yeojin.me/api/products/search/?query=' + target)
+    .subscribe(itemlist => {
+      this.searchItemLists = itemlist;
+      console.log(this.searchItemLists);
+    });
+  }
+
+  removeToken(): void {
+    localStorage.removeItem('Token');
+    console.log('[logout]', this.userToken);
+    this.userToken = '';
+  }
+
+  modifyAmount(pk) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': `token ${this.userToken}`
+      })
+    };
+    this.http.patch('https://server.yeojin.me/api/carts/cartitemdetail/' + pk + '/', { amount: 10 }, httpOptions )
+    .subscribe( () => {
+      this.getCartItemLists.map( itemList => {
+        return itemList.pk === pk ? {...itemList, amount: this.totalQuantity } : itemList;
+      });
+      console.log('[modifyAmount]', pk, this.getCartItemLists);
+    });
+
+  }
+
+  deleteCartItem(pk) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': `token ${this.userToken}`
+      })
+    };
+    this.http.delete('https://server.yeojin.me/api/carts/cartitemdetail/' + pk + '/', httpOptions)
+    .subscribe( () => {
+      console.log('[deleteCartItem]', pk);
+      this.getCartItemLists = this.getCartItemLists.filter( itemList => {
+          return itemList.pk !== pk;
+      });
+      this.cartItemList.pop();
+      console.log(this.cartItemList);
+      console.log(this.getCartItemLists);
+    });
+  }
+
+  cartTotalPrice() {
+    let result = 0;
+    this.getCartItemLists.forEach( cartItem => {
+      result = result + cartItem.item_total_price;
+    });
+    return result;
+  }
+  // getCartList() {
+  //   this.http.get()
+  // }
+
+
 }

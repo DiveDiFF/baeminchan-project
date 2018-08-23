@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductApiService } from '../../../module/product-api.service';
+import { ActivatedRoute } from '../../../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-item-detail-main',
@@ -14,11 +15,18 @@ export class ItemDetailMainComponent implements OnInit {
   foldingTitle2 = '접어두기';
   foldingTitle3 = '접어두기';
   hoverImg = 0;
-  constructor(public api: ProductApiService) { }
+
+  constructor(
+    public api: ProductApiService,
+    private route: ActivatedRoute
+  ) {
+      this.route.params.subscribe(params => {
+        console.log('detail', params['id']);
+        this.api.getItemDetail(params['id']);
+    });
+   }
 
   ngOnInit() {
-    this.api.getItemDetail(this.api.itemdetailId);
-    console.log(this.api.productItemDetail);
     this.api.totalQuantity = 1;
   }
 

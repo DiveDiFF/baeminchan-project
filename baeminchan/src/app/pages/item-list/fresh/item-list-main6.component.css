@@ -246,6 +246,7 @@ ul.prds_lst li .prds_lst_info .prd_thumb_price p {
   position: relative;
   display: inline-block;
   font-family: "Noto Sans KR Bold", sans-serif;
+  font-weight: bold;
 }
 
 ul.prds_lst li .prds_lst_info .prd_thumb_price p.selling-price {

@@ -12,7 +12,7 @@
           <ul id="sidedish" class="sidedish-list prd-list" [ngStyle]="{ 'transform': thumbChange(), 'transition-duration': thumbChangeDuration() }">
             <!-- 아이템 1-->
             <li class="sidedish-item prd-item" *ngFor="let item of api.slideListItems">
-              <a [href]="item.url">
+              <a [routerLink]="['/itemdetail', item.id]">
                 <div class="thumb-img">
                   <img [src]="item.thumbnail_url1" alt="item.raw_name">
                 </div>
@@ -43,7 +43,7 @@
         </div>
       </div>
     </div>
-    <a class="btn-more">
+    <a class="btn-more" routerLink="/side-dish">
       <span>밑반찬 전체보기</span>
     </a>
   </div>

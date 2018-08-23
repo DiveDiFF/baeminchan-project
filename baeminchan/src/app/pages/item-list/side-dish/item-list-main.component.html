@@ -22,7 +22,7 @@
 
       <ul class="choice_category_lst" *ngIf="api.listSortItems">
         <li ga-category="PC-listCategory,side-dish,전체보기" *ngFor="let listSortItem of api.listSortItems">
-          <a (click)="api.getItemList(listSortItem)" [class.now]="api.nowActiveMenu === listSortItem">
+          <a (click)="api.getItemList('side-dish', listSortItem)" [class.now]="api.nowActiveMenu === listSortItem">
             <span>{{ listSortItem }}</span>
           </a>
       </ul>
@@ -31,16 +31,15 @@
         <li *ngFor="let productItemList of api.productItemLists">
           <div class="imgthumb">
             <img src="{{ productItemList.thumbnail_url1 }}" alt="">
-            <a routerLink="/itemdetail"
+            <a [routerLink]="['/itemdetail', productItemList.id]"
                 routerLinkActive="active"
-                [routerLinkActiveOptions]="{ exact: true }"
-                (click)="api.itemdetailId = productItemList.id">
+                [routerLinkActiveOptions]="{ exact: true }">
                 <div class="thumb_badge" *ngIf="productItemList.discount_rate"><span class="num">{{ productItemList.discount_rate }}</span><span class="unit">%</span></div>
             </a>
           </div>
           <dl class="prds_lst_info">
             <dt class="prd_tlt">
-              <a routerLink="/itemdetail"
+              <a [routerLink]="['/itemdetail', productItemList.id]"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }">
                 <span>{{ productItemList.raw_name }}</span>
@@ -48,15 +47,15 @@
             </dt>
             <dd class="star-rating-box">
               <span class="star-score-bg">
-                <span class="star-score" style="width: 80%;">5점 만점에 4점</span>
+                <span class="star-score" [ngStyle]="{ 'width.%': api.starScoreStyle(productItemList.avg_rating) }">{{ productItemList.avg_rating }}</span>
               </span>
-              <span class="review-count">254</span>
+              <span class="review-count">{{ productItemList.comment_count }}</span>
             </dd>
             <dd class="prd_thumb_price">
-              <p class="selling-price">{{ productItemList.sale_price | currency:'KRW':'symbol':'1.0' }}<span class="won">원</span>
+              <p class="selling-price">{{ productItemList.sale_price | currency }}<span class="won">원</span>
               </p>
               <p class="origin-price" *ngIf="productItemList.discount_rate">
-                <del>{{ productItemList.price | currency:'KRW':'symbol':'1.0' }}원</del>
+                <del>{{ productItemList.price | currency }}원</del>
               </p>
             </dd>
             <dd class="prd_to_basket">

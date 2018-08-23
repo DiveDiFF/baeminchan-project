@@ -8,14 +8,11 @@ import { ProductApiService } from '../../../module/product-api.service';
 })
 export class ItemListMainComponent implements OnInit {
 
-  currentPage = 1;
-  pages = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
-
   constructor(
       public api: ProductApiService,
   ) { }
 
   ngOnInit() {
-    this.api.getItemList(this.api.nowActiveMenu);
+    this.api.getItemList(this.api.parentmenu, this.api.nowActiveMenu);
   }
 }

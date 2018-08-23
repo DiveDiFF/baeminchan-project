@@ -14,10 +14,17 @@ export * from './main/main-item5/main-item5.component';
 export * from './main/main-footer/main-footer.component';
 export * from './basket-popup/basket-popup.component';
 export * from './item-list/item-list.component';
-export * from './item-list/item-list-main/item-list-main.component';
+export * from './item-list/side-dish/item-list-main.component';
+export * from './item-list/soup/item-list-main2.component';
+export * from './item-list/main-courses/item-list-main3.component';
+export * from './item-list/kids/item-list-main4.component';
+export * from './item-list/set-of-side/item-list-main5.component';
+export * from './item-list/fresh/item-list-main6.component';
+export * from './item-list/refreshment/item-list-main7.component';
 export * from './signin/signin.component';
 export * from './signup/signup.component';
 export * from './item-detail/item-detail.component';
 export * from './item-detail/item-detail-main/item-detail-main.component';
 export * from './cart/cart.component';
+export * from './search/search.component';
 

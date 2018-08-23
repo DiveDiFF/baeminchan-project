@@ -15,13 +15,18 @@
 
     <!-- 멤버 메뉴 -->
     <ul class="member-menu-list">
-      <li class="member-menu-item">
+      <li class="member-menu-item" *ngIf="!userToken">
         <a routerLink="/login"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }">로그인</a>
       </li>
-      <li class="member-menu-item">
-        <a>회원가입</a>
+      <li class="member-menu-item" *ngIf="userToken">
+          <a (click)="api.removeToken()">로그아웃</a>
+        </li>
+      <li class="member-menu-item" *ngIf="!userToken">
+        <a routerLink="/signup"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">회원가입</a>
       </li>
       <li class="member-menu-item">
         <a>마이페이지<span class="ic">&nbsp;</span></a>

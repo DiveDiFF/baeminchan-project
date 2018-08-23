@@ -7,11 +7,11 @@
     </a>
     <h2 class="hidden">헤더 메뉴</h2>
 
-    <form name="form_search" class="searchbar" ngNoForm>
+    <div name="form_search" class="searchbar" ngNoForm>
       <label class="hidden">검색</label>
-      <input type="text" name="search_str" id="search_str" value="" placeholder="" data-url="">
-      <button type="submit"><span class="icon_search">검색</span></button>
-    </form>
+      <input type="text" #searchval>
+      <button type="button" [disabled]="searchval.value === ''" [routerLink]="['/search', searchval.value]"><span class="icon_search">검색</span></button>
+    </div>
     <ul class="gnb_top">
       <li class="link_best" bannercode="P_GNB1">
         <a>

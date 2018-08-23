@@ -13,4 +13,7 @@ export class HeaderTopMenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  get userToken() {
+    return this.api.userToken;
+  }
 }
