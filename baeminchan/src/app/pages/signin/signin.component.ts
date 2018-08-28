@@ -58,7 +58,7 @@ export class SigninComponent implements OnInit {
     this.userForm.status === 'INVALID' ? alert('아이디를 입력하세요') : '' ;
     this.errMsgNormal = !this.errMsgNormal;  // 수정필요
     this.errMsgFail = !this.errMsgFail;  // 수정필요
-    this.http.post(this.apiUrl, this.userForm.value)
+    this.http.post<any>(this.apiUrl, this.userForm.value)
     .subscribe( resp => {
       localStorage.setItem('Token', resp.token)
       const tokenSend = localStorage.getItem('Token');

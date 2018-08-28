@@ -35,7 +35,7 @@ const routes: Routes = [
       { path: 'fresh', component: ItemListMain6Component },
       { path: 'refreshment', component: ItemListMain7Component },
     ]
-  }
+  },
   { path: 'login', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'itemdetail/:id', component: ItemDetailComponent },

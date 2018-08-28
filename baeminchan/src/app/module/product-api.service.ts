@@ -199,7 +199,7 @@ export class ProductApiService {
         'Authorization': `token ${this.userToken}`
       })
     };
-    this.http.get<GetCartItem>('https://server.yeojin.me/api/carts/cartitemlist/', httpOptions)
+    this.http.get<GetCartItem[]>('https://server.yeojin.me/api/carts/cartitemlist/', httpOptions)
     .subscribe( itemList => {
       console.log('[get]', this.userToken, itemList);
       this.getCartItemLists = itemList;
