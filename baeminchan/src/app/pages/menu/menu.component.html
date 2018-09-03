@@ -1,0 +1,93 @@
+<!-- 메인 메뉴-->
+<div class="nav-wrapper">
+  <nav class="main-menu-wrapper">
+    <h2 class="hidden">메인 메뉴</h2>
+    <ul class="main-menu-list">
+      <li id="menu1" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a routerLink="/itemlist/side-dish"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="api.nowActiveMenu = '전체보기'" (click)="api.parentmenu = 'side-dish'"><span class="menu-item-title">밑반찬</span></a>
+        <ul class="sub-menu" [class.active]="'menu1' === focusedMenu">
+          <li *ngFor="let sub of subMenu1" [id]="sub">
+            <a routerLink="itemlist/side-dish" (click)="api.nowActiveMenu = sub" (click)="api.parentmenu = 'side-dish'"><span>{{sub}}</span></a>
+          </li>
+        </ul>
+      </li>
+      <li id="menu2" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a routerLink="/itemlist/soup"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="api.nowActiveMenu = '전체보기'" (click)="api.parentmenu = 'soup'"><span class="menu-item-title" >국ㆍ찌개</span></a>
+        <ul class="sub-menu" [class.active]="'menu2' === focusedMenu">
+          <li *ngFor="let sub of subMenu2" [id]="sub">
+            <a routerLink="/itemlist/soup" (click)="api.nowActiveMenu = sub" (click)="api.parentmenu = 'soup'"><span>{{sub}}</span></a>
+          </li>
+        </ul>
+      </li>
+      <li id="menu3" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a routerLink="/itemlist/main-courses"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="api.nowActiveMenu = '전체보기'" (click)="api.parentmenu = 'main-courses'"><span class="menu-item-title">메인반찬</span></a>
+        <ul class="sub-menu" [class.active]="'menu3' === focusedMenu">
+          <li *ngFor="let sub of subMenu3" [id]="sub">
+            <a routerLink="itemlist/main-courses" (click)="api.nowActiveMenu = sub" (click)="api.parentmenu = 'main-courses'"><span>{{sub}}</span></a>
+          </li>
+        </ul>
+      </li>
+      <li id="menu4" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a routerLink="/itemlist/kids"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="api.nowActiveMenu = '전체보기'" (click)="api.parentmenu = 'kids'"><span class="menu-item-title" >아이반찬</span></a>
+        <ul class="sub-menu" [class.active]="'menu4' === focusedMenu">
+          <li *ngFor="let sub of subMenu4" [id]="sub">
+            <a routerLink="itemlist/kids" (click)="api.nowActiveMenu = sub" (click)="api.parentmenu = 'kids'"><span>{{sub}}</span></a>
+          </li>
+        </ul>
+      </li>
+      <li id="menu5" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a routerLink="/itemlist/set-of-side"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="api.nowActiveMenu = '전체보기'" (click)="api.parentmenu = 'set-of-side'"><span class="menu-item-title" >정기식단</span></a>
+        <ul class="sub-menu" [class.active]="'menu5' === focusedMenu">
+          <li *ngFor="let sub of subMenu5" [id]="sub">
+            <a routerLink="itemlist/set-of-side" (click)="api.nowActiveMenu = sub" (click)="api.parentmenu = 'set-of-side'"><span>{{sub}}</span></a>
+          </li>
+        </ul>
+      </li>
+      <li id="menu6" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a routerLink="/itemlist/fresh"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="api.nowActiveMenu = '전체보기'" (click)="api.parentmenu = 'fresh'"><span id="sub-menu6" class="menu-item-title">간편식</span></a>
+        <ul class="sub-menu" [class.active]="'menu6' === focusedMenu">
+          <li *ngFor="let sub of subMenu6" [id]="sub">
+            <a routerLink="itemlist/fresh" (click)="api.nowActiveMenu = sub" (click)="api.parentmenu = 'fresh'"><span>{{sub}}</span></a>
+          </li>
+        </ul>
+      </li>
+      <li id="menu7" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a routerLink="/itemlist/refreshment"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="api.nowActiveMenu = '전체보기'" (click)="api.parentmenu = 'refreshment'"><span class="menu-item-title">간식</span></a>
+        <ul class="sub-menu" [class.active]="'menu7' === focusedMenu">
+          <li *ngFor="let sub of subMenu7" [id]="sub">
+            <a routerLink="itemlist/refreshment" (click)="api.nowActiveMenu = sub" (click)="api.parentmenu = 'refreshment'"><span>{{sub}}</span></a>
+          </li>
+        </ul>
+      </li>
+      <li id="menu8" class="menu-item" (mouseenter)="mouseEnter($event.target)" (mouseleave)="mouseLeave()">
+        <a><span id="sub-menu8" class="menu-item-title">브랜드관</span></a>
+        <ul class="sub-menu" [class.active]="'menu8' === focusedMenu">
+          <li *ngFor="let sub of subMenu8" [id]="sub">
+            <a><span>{{sub}}</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>

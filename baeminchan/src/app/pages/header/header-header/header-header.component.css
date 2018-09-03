@@ -1,0 +1,67 @@
+.header-wrapper {
+  position: relative;
+  background: #fff;
+}
+
+.header-wrapper .header {
+  position: relative;
+  height: 98px;
+  width: 980px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.header .logo {
+  float: left;
+  margin: 16px 0 0 5px;
+}
+
+.header .searchbar {
+  position: relative;
+  float: left;
+  margin: 30px 0 0 46px;
+}
+
+label {
+  cursor: pointer;
+}
+
+.header .searchbar input {
+  width: 210px;
+  height: 40px;
+  color: rgb(136, 136, 136);
+  font-family: Verdana, 나눔고딕, Nanum, "Malgun Gothic", sans-serif;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(207, 208, 210);
+  border-image: initial;
+  padding: 0px 38px 0px 15px;
+}
+
+.header .searchbar button {
+  background: url("http://cdn.bmf.kr/web/common/ic_search.png") no-repeat center 0;
+  width: 38px;
+  height: 38px;
+  text-indent: -3000px;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  border: 0;
+}
+
+.header .gnb_top {
+  overflow: hidden;
+  float: right;
+  margin-right: 5px;
+}
+
+.header .gnb_top>li {
+  float: left;
+}
+
+.header .gnb_top>li a {
+  display: block;
+  height: 48px;
+  margin: 25px 0 25px 50px;
+}

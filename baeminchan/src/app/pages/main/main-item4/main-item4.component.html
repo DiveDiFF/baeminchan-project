@@ -1,0 +1,59 @@
+<main class="item-wrapper">
+    <h2 class="hidden">메뉴 리스트</h2>
+    <div class="prd-wrapper">
+      <div class="mtlt">
+        <h3>간식</h3>
+        <p>빵, 디저트, 유제품, 주스, 커피</p>
+      </div>
+      <div class="prds-thumb-slides-wrap">
+        <div class="bx-wrapper">
+          <div class="bx-viewport">
+            <ul id="sidedish" class="sidedish-list prd-list" [ngStyle]="{ 'transform': thumbChange(), 'transition-duration': thumbChangeDuration() }">
+              <!-- 아이템 1-->
+              <li class="sidedish-item prd-item" *ngFor="let item of api.slideListItems4">
+                <a [routerLink]="['/itemdetail', item.id]">
+                  <div class="thumb-img">
+                    <img [src]="item.thumbnail_url1" alt="item.raw_name">
+                  </div>
+                  <dl>
+                    <dt class="sidedish-title prd-item-title">{{ item.raw_name }}</dt>
+                    <dd class="sidedish-description prd-item-des">{{ item.description }}</dd>
+                    <dd class="star-rating-box" *ngIf="item.avg_rating">
+                      <span class="star-score-bg">
+                        <span class="star-score" [ngStyle]="{ 'width.%': api.starScoreStyle(item.avg_rating) }">{{ item.avg_rating }}</span>
+                      </span>
+                      <span class="review-count" *ngIf="item.comment_count">{{ item.comment_count }}</span>
+                    </dd>
+                    <dd class="prd-price">
+                      <p class="selling-price">{{ item.sale_price | currency:'KRW':'symbol':'1.0' }}<span class="unit">원</span></p>
+                      <p class="origin-price" *ngIf="item.price">
+                        <del>{{ item.price | currency:'KRW':'symbol':'1.0' }}</del>
+                      </p>
+                    </dd>
+                  </dl>
+                  <div class="badge-area" *ngIf="item.price">
+                    <div class="badge event">
+                      <span>이벤트특가</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a class="btn-more">
+        <span>간식 전체보기</span>
+      </a>
+    </div>
+    <div class="slides-item-navi">
+      <a href="javascript:void(0);" class="slides-prev" title="이전" (click)="thumbSlidePrev()">이전</a>
+      <a href="javascript:void(0);" class="slides-next" title="다음" (click)="thumbSlideNext()">다음</a>
+    </div>
+    <div class="prds_banner g2" style="background-image:url(https://cdn.bmf.kr/banner/main_event/180110/1515544922394_3bcea39b80f0.jpg); background-color:#dad8d3;">
+      <p>
+        <a>푸드트리</a>
+      </p>
+    </div>
+    <!-- <pre>{{ api.slideListItems | json }}</pre> -->
+  </main>

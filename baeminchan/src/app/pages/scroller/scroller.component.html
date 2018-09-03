@@ -1,0 +1,6 @@
+  <div id="scroller" [ngStyle]="{ 'opacity': activeScroller() }">
+    <ul class="page_up_down_lst" style="display: block;">
+        <li class="page_up"><a (click)="goToPageUp()">위로</a></li>
+        <li class="page_down"><a (click)="goToPageDown()">아래로</a></li>
+    </ul>
+</div>
